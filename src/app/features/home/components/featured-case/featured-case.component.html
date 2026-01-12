@@ -1,0 +1,25 @@
+<section class="featured-case">
+  <div class="featured-case_container">
+    <div class="featured-case_header">
+      <div class="featured-case_badge">
+        <span class="featured-case_badge-text">{{ 'home.featuredCase.label' | translate }}</span>
+      </div>
+      <h2 class="featured-case_title">
+        {{ caseStudy.titleKey | translate }}
+      </h2>
+    </div>
+
+    <div class="featured-case_content">
+      <div class="featured-case_text">
+        <p class="featured-case_description">
+          {{ caseStudy.descriptionKey | translate }}
+        </p>
+        <div class="featured-case_actions">
+          <a [routerLink]="caseStudy.link" class="featured-case_link">
+            {{ 'home.featuredCase.readMore' | translate }} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

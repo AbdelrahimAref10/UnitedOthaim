@@ -1,0 +1,22 @@
+<div class="language-switcher">
+  <button
+    type="button"
+    (click)="setLanguage('ar')"
+    class="language-switcher_button"
+    [class.language-switcher_button-active]="i18nService.getCurrentLanguage() === 'ar'"
+    [attr.aria-label]="'Switch to Arabic'"
+    [attr.aria-pressed]="i18nService.getCurrentLanguage() === 'ar'"
+  >
+    عربي
+  </button>
+  <button
+    type="button"
+    (click)="setLanguage('en')"
+    class="language-switcher_button"
+    [class.language-switcher_button-active]="i18nService.getCurrentLanguage() === 'en'"
+    [attr.aria-label]="'Switch to English'"
+    [attr.aria-pressed]="i18nService.getCurrentLanguage() === 'en'"
+  >
+    EN
+  </button>
+</div>

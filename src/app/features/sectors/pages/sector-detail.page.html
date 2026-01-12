@@ -1,0 +1,17 @@
+<div class="sector-detail-page">
+  <app-page-header
+    [title]="sector ? (i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name) : ''"
+    [subtitle]="sector ? (i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description) : ''"
+  ></app-page-header>
+  <div class="sector-detail-page_content section">
+    <div class="sector-detail-page_container">
+      <div class="sector-detail-page_details" *ngIf="sector">
+        <p class="sector-detail-page_text">
+          {{ i18nService.getCurrentLanguage() === 'ar' 
+            ? ('sectors.' + sector.id + '.details' | translate)
+            : ('sectors.' + sector.id + '.details' | translate) }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

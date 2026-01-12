@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "vision": "Our Vision",
+    "sectors": "Sectors",
+    "clients": "Our Clients",
+    "team": "Our Team",
+    "board": "Board of Directors",
+    "contact": "Contact Us"
+  },
+  "buttons": {
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "send": "Send",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noData": "No data available",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "select": "Select",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "subject": "Subject",
+    "address": "Address",
+    "website": "Website"
+  },
+  "footer": {
+    "companyName": "Abdullah Abdulkarim Al Othaim United Company",
+    "description": "A leading company in various business sectors",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved",
+    "signUp": {
+      "title": "Sign up for email alerts",
+      "description": "Get latest updates and offers.",
+      "placeholder": "Your email address",
+      "submit": "Subscribe",
+      "note": "Leave this field empty if you're human:"
+    },
+    "recentNews": "Recent News",
+    "callFree": "Call Free",
+    "socialNetwork": "Social Network"
+  }
+}

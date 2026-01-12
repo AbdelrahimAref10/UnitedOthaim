@@ -1,0 +1,16 @@
+<app-page-header
+  titleKey="clients.title"
+  subtitleKey="clients.subtitle"
+  descriptionKey="clients.description"
+></app-page-header>
+<div class="clients-page section">
+  <div class="clients-page_container">
+    <div class="clients-page_grid">
+      <div *ngFor="let i of [1,2,3,4,5,6,7,8]" class="clients-page_client card">
+        <div class="clients-page_client-placeholder">
+          {{ 'clients.title' | translate }} {{ i }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

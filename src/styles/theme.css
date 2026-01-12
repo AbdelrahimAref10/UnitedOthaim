@@ -1,0 +1,35 @@
+/* Theme Variables for Light/Dark Mode */
+:root {
+  /* Light mode colors */
+  --theme-primary: #1e40af;
+  --theme-secondary: #059669;
+  --theme-background: #ffffff;
+  --theme-surface: #f8fafc;
+  --theme-text: #1e293b;
+  --theme-border: #e2e8f0;
+  --theme-error: #dc2626;
+  --theme-success: #059669;
+  --theme-warning: #d97706;
+  --theme-info: #0891b2;
+}
+
+.dark {
+  /* Dark mode colors */
+  --theme-primary: #3b82f6;
+  --theme-secondary: #10b981;
+  --theme-background: #0f172a;
+  --theme-surface: #1e293b;
+  --theme-text: #f1f5f9;
+  --theme-border: #334155;
+  --theme-error: #f87171;
+  --theme-success: #10b981;
+  --theme-warning: #fb923c;
+  --theme-info: #22d3ee;
+}
+
+/* Smooth theme transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}

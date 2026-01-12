@@ -1,0 +1,23 @@
+.sector-card {
+  @apply p-6;
+}
+
+.sector-card_content {
+  @apply space-y-4;
+}
+
+.sector-card_header {
+  @apply mb-4;
+}
+
+.sector-card_title {
+  @apply text-xl md:text-2xl font-semibold text-primary-light dark:text-primary-dark mb-2;
+}
+
+.sector-card_description {
+  @apply text-text-light dark:text-text-dark opacity-75 line-clamp-3;
+}
+
+.sector-card_footer {
+  @apply mt-6;
+}

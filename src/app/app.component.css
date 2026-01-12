@@ -1,0 +1,11 @@
+.app {
+  @apply min-h-screen flex flex-col;
+  margin: 0;
+  padding: 0;
+}
+
+.app_main {
+  @apply flex-1;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,23 @@
+<app-page-header
+  titleKey="about.title"
+></app-page-header>
+<div class="about-page section">
+  <div class="about-page_container">
+    <app-company-history></app-company-history>
+    <div class="about-page_values">
+      <h2 class="about-page_values-title">
+        {{ 'about.values.title' | translate }}
+      </h2>
+      <div class="about-page_values-grid">
+        <div *ngFor="let value of values" class="about-page_value">
+          <h3 class="about-page_value-title">
+            {{ ('about.values.' + value + '.title') | translate }}
+          </h3>
+          <p class="about-page_value-description">
+            {{ ('about.values.' + value + '.description') | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

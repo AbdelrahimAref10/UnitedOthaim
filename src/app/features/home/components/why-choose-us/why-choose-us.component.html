@@ -1,0 +1,34 @@
+<section class="why-choose-us">
+  <div class="why-choose-us_container">
+    <div class="why-choose-us_header">
+      <div class="why-choose-us_badge">
+        <span class="why-choose-us_badge-text">{{ 'home.whyChooseUs.title' | translate }}</span>
+      </div>
+      <h2 class="why-choose-us_title">
+        {{ 'home.whyChooseUs.title' | translate }}
+      </h2>
+    </div>
+
+    <div class="why-choose-us_grid">
+      <div 
+        *ngFor="let feature of features; let i = index"
+        class="why-choose-us_item"
+        [style.animation-delay]="(i * 0.1) + 's'"
+      >
+        <div class="why-choose-us_item-icon">
+          <div class="why-choose-us_icon-circle">
+            <span class="why-choose-us_icon-number">{{ i + 1 }}</span>
+          </div>
+        </div>
+        <div class="why-choose-us_item-content">
+          <h3 class="why-choose-us_item-title">
+            {{ feature.titleKey | translate }}
+          </h3>
+          <p class="why-choose-us_item-description">
+            {{ feature.descriptionKey | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

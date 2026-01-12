@@ -1,0 +1,46 @@
+<section class="testimonials-section">
+  <div class="testimonials-section_container">
+    <div class="testimonials-section_header">
+      <div class="testimonials-section_badge">
+        <span class="testimonials-section_badge-text">{{ 'home.testimonials.title' | translate }}</span>
+      </div>
+      <h2 class="testimonials-section_title">
+        {{ 'home.testimonials.title' | translate }}
+      </h2>
+    </div>
+
+    <div class="testimonials-section_grid">
+      <div 
+        *ngFor="let testimonial of testimonials"
+        class="testimonials-section_item"
+      >
+        <div class="testimonials-section_quote">
+          <svg class="testimonials-section_quote-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h3.983v10h-9.984z"/>
+          </svg>
+          <p class="testimonials-section_text">
+            {{ testimonial.quoteKey | translate }}
+          </p>
+        </div>
+        <div class="testimonials-section_author">
+          <div class="testimonials-section_author-image-wrapper">
+            <img 
+              [src]="testimonial.image"
+              [alt]="i18nService.getCurrentLanguage() === 'ar' ? testimonial.authorAr : testimonial.author"
+              class="testimonials-section_author-image"
+            />
+          </div>
+          <div class="testimonials-section_author-info">
+            <div class="testimonials-section_author-name">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? testimonial.authorAr : testimonial.author }}
+            </div>
+            <div class="testimonials-section_author-position">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? testimonial.positionAr : testimonial.position }}, 
+              {{ i18nService.getCurrentLanguage() === 'ar' ? testimonial.companyAr : testimonial.company }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

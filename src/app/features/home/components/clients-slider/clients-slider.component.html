@@ -1,0 +1,50 @@
+<section id="clients" class="clients-slider">
+  <div class="clients-slider_container">
+    <div class="clients-slider_header">
+      <div class="clients-slider_badge">
+        <span class="clients-slider_badge-text">{{ 'home.clients.title' | translate }}</span>
+      </div>
+      <h2 class="clients-slider_title">
+        {{ 'home.clients.title' | translate }}
+      </h2>
+      <p class="clients-slider_subtitle">
+        {{ 'home.clients.subtitle' | translate }}
+      </p>
+    </div>
+
+    <div class="clients-slider_wrapper">
+      <button 
+        class="clients-slider_nav clients-slider_nav-prev"
+        (click)="prevSlide()"
+        aria-label="Previous"
+      >
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <div class="clients-slider_logos">
+        <div 
+          *ngFor="let client of getVisibleClients()"
+          class="clients-slider_logo-wrapper"
+        >
+          <img 
+            [src]="client.logo"
+            [alt]="client.name"
+            class="clients-slider_logo"
+          />
+        </div>
+      </div>
+
+      <button 
+        class="clients-slider_nav clients-slider_nav-next"
+        (click)="nextSlide()"
+        aria-label="Next"
+      >
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

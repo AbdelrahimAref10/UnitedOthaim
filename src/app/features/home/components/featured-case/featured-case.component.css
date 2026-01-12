@@ -1,0 +1,47 @@
+.featured-case {
+  @apply py-20 md:py-32 bg-gray-50 dark:bg-gray-800;
+}
+
+.featured-case_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.featured-case_header {
+  @apply mb-12 text-center;
+}
+
+.featured-case_badge {
+  @apply inline-block mb-6;
+}
+
+.featured-case_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.featured-case_label {
+  @apply text-sm uppercase tracking-wider text-secondary-light dark:text-secondary-dark font-semibold mb-4 block;
+}
+
+.featured-case_title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center;
+}
+
+.featured-case_content {
+  @apply max-w-4xl mx-auto;
+}
+
+.featured-case_text {
+  @apply space-y-6 text-center;
+}
+
+.featured-case_description {
+  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center;
+}
+
+.featured-case_actions {
+  @apply flex justify-center mt-8;
+}
+
+.featured-case_link {
+  @apply text-primary-light dark:text-primary-dark font-semibold hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300 inline-flex items-center gap-2;
+}

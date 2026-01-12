@@ -1,0 +1,19 @@
+.page-header {
+  @apply py-16 md:py-24 bg-surface-light dark:bg-surface-dark;
+}
+
+.page-header_content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
+}
+
+.page-header_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-primary-light dark:text-primary-dark mb-4;
+}
+
+.page-header_subtitle {
+  @apply text-2xl md:text-3xl font-semibold text-text-light dark:text-text-dark mb-4 opacity-90;
+}
+
+.page-header_description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75 max-w-3xl mx-auto;
+}

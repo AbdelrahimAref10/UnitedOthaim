@@ -1,0 +1,78 @@
+.services-section {
+  @apply py-20 md:py-32 bg-white dark:bg-gray-900;
+}
+
+.services-section_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.services-section_header {
+  @apply text-center mb-16;
+}
+
+.services-section_badge {
+  @apply inline-block mb-6;
+}
+
+.services-section_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.services-section_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4;
+}
+
+.services-section_subtitle {
+  @apply text-xl text-gray-600 dark:text-gray-300;
+}
+
+.services-section_grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12;
+}
+
+.services-section_card {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8 hover:border-secondary-light dark:hover:border-secondary-dark hover:shadow-xl transition-all duration-300 cursor-pointer;
+}
+
+.services-section_card-image-wrapper {
+  @apply relative h-48 mb-6 overflow-hidden;
+}
+
+.services-section_card-image {
+  @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-110;
+}
+
+.services-section_card-overlay {
+  @apply hidden;
+}
+
+.services-section_card-content {
+  @apply relative z-10;
+}
+
+.services-section_card-title {
+  @apply text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors duration-300;
+}
+
+.services-section_card-description {
+  @apply text-gray-600 dark:text-gray-300 mb-6 leading-relaxed;
+}
+
+.services-section_card-link {
+  @apply text-primary-light dark:text-primary-dark font-semibold hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300 inline-flex items-center gap-2;
+}
+
+.services-section_footer {
+  @apply text-center;
+}
+
+.services-section_view-all {
+  @apply text-base px-10 py-4 bg-primary-light hover:bg-primary-800 text-white font-semibold rounded-none uppercase tracking-wider transition-all duration-300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-section_grid {
+    @apply grid-cols-1;
+  }
+}

@@ -1,0 +1,14 @@
+<app-page-header
+  titleKey="team.team.title"
+  subtitleKey="team.team.subtitle"
+></app-page-header>
+<div class="team-page section">
+  <div class="team-page_container">
+    <div class="team-page_grid">
+      <app-team-card
+        *ngFor="let member of teamMembers"
+        [member]="member"
+      ></app-team-card>
+    </div>
+  </div>
+</div>

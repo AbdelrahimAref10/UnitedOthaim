@@ -1,0 +1,40 @@
+<section class="news-section">
+  <div class="news-section_container">
+    <div class="news-section_header">
+      <div class="news-section_badge">
+        <span class="news-section_badge-text">{{ 'home.news.title' | translate }}</span>
+      </div>
+      <h2 class="news-section_title">
+        {{ 'home.news.title' | translate }}
+      </h2>
+    </div>
+
+    <div class="news-section_grid">
+      <article 
+        *ngFor="let item of newsItems"
+        class="news-section_item group"
+        [routerLink]="'/news/' + item.id"
+      >
+        <div class="news-section_item-image-wrapper">
+          <img 
+            [src]="item.image"
+            [alt]="item.titleKey | translate"
+            class="news-section_item-image"
+          />
+          <span class="news-section_item-category">{{ item.category }}</span>
+        </div>
+        <div class="news-section_item-content">
+          <h3 class="news-section_item-title">
+            {{ item.titleKey | translate }}
+          </h3>
+          <p class="news-section_item-excerpt">
+            {{ item.excerptKey | translate }}
+          </p>
+          <span class="news-section_item-link">
+            {{ 'home.news.readMore' | translate }} →
+          </span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

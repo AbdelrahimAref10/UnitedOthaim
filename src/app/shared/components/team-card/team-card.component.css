@@ -1,0 +1,31 @@
+.team-card {
+  @apply p-6;
+}
+
+.team-card_content {
+  @apply space-y-4 text-center;
+}
+
+.team-card_image-wrapper {
+  @apply mx-auto w-32 h-32 rounded-full overflow-hidden bg-surface-light dark:bg-surface-dark;
+}
+
+.team-card_image {
+  @apply w-full h-full object-cover;
+}
+
+.team-card_info {
+  @apply space-y-2;
+}
+
+.team-card_name {
+  @apply text-xl md:text-2xl font-semibold text-primary-light dark:text-primary-dark;
+}
+
+.team-card_position {
+  @apply text-text-light dark:text-text-dark opacity-75 font-medium;
+}
+
+.team-card_bio {
+  @apply text-sm text-text-light dark:text-text-dark opacity-60;
+}

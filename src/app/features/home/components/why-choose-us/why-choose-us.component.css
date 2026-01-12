@@ -1,0 +1,156 @@
+.why-choose-us {
+  @apply py-20 md:py-32 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.why-choose-us_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
+}
+
+.why-choose-us_header {
+  @apply mb-16 text-center;
+}
+
+.why-choose-us_badge {
+  @apply inline-block mb-6;
+}
+
+.why-choose-us_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.why-choose-us_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white;
+}
+
+.why-choose-us_grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10;
+}
+
+.why-choose-us_item {
+  @apply relative bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.why-choose-us_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #d4af37 0%, #f4a460 100%);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+}
+
+.why-choose-us_item:hover::before {
+  transform: scaleY(1);
+}
+
+.why-choose-us_item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.why-choose-us_item:hover::after {
+  opacity: 1;
+}
+
+.why-choose-us_item-icon {
+  @apply flex items-center;
+}
+
+.why-choose-us_icon-circle {
+  @apply w-16 h-16 rounded-full flex items-center justify-center;
+  background: linear-gradient(135deg, #d4af37 0%, #f4a460 100%);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us_item:hover .why-choose-us_icon-circle {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.why-choose-us_icon-number {
+  @apply text-2xl font-bold text-white;
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-us_item-content {
+  @apply flex-1;
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-us_item-title {
+  @apply text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.why-choose-us_item:hover .why-choose-us_item-title {
+  @apply text-secondary-light dark:text-secondary-dark;
+}
+
+.why-choose-us_item-description {
+  @apply text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg;
+  line-height: 1.8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .why-choose-us_item {
+    @apply p-6;
+  }
+  
+  .why-choose-us_icon-circle {
+    @apply w-14 h-14;
+  }
+  
+  .why-choose-us_icon-number {
+    @apply text-xl;
+  }
+}

@@ -1,0 +1,61 @@
+<section id="team" class="team-slider">
+  <div class="team-slider_container">
+    <div class="team-slider_header">
+      <div class="team-slider_badge">
+        <span class="team-slider_badge-text">{{ 'home.team.title' | translate }}</span>
+      </div>
+      <h2 class="team-slider_title">
+        {{ 'home.team.title' | translate }}
+      </h2>
+      <p class="team-slider_subtitle">
+        {{ 'home.team.subtitle' | translate }}
+      </p>
+    </div>
+
+    <div class="team-slider_wrapper">
+      <button 
+        class="team-slider_nav team-slider_nav-prev"
+        (click)="prevSlide()"
+        aria-label="Previous"
+      >
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <div class="team-slider_cards">
+        <div 
+          *ngFor="let member of getVisibleMembers()"
+          class="team-slider_card"
+        >
+          <div class="team-slider_card-image-wrapper">
+            <img 
+              [src]="member.image"
+              [alt]="i18nService.getCurrentLanguage() === 'ar' ? member.nameAr : member.name"
+              class="team-slider_card-image"
+            />
+          </div>
+          <div class="team-slider_card-content">
+            <h3 class="team-slider_card-name">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? member.nameAr : member.name }}
+            </h3>
+            <p class="team-slider_card-position">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? member.positionAr : member.position }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button 
+        class="team-slider_nav team-slider_nav-next"
+        (click)="nextSlide()"
+        aria-label="Next"
+      >
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>

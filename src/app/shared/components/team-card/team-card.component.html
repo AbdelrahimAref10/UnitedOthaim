@@ -1,0 +1,18 @@
+<div class="team-card card">
+  <div class="team-card_content">
+    <div class="team-card_image-wrapper" *ngIf="member.image">
+      <img [src]="member.image" [alt]="member.name" class="team-card_image" />
+    </div>
+    <div class="team-card_info">
+      <h3 class="team-card_name">
+        {{ i18nService.getCurrentLanguage() === 'ar' ? member.nameAr : member.name }}
+      </h3>
+      <p class="team-card_position">
+        {{ i18nService.getCurrentLanguage() === 'ar' ? member.positionAr : member.position }}
+      </p>
+      <p class="team-card_bio" *ngIf="member.bio">
+        {{ i18nService.getCurrentLanguage() === 'ar' ? member.bioAr : member.bio }}
+      </p>
+    </div>
+  </div>
+</div>

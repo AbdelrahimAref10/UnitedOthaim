@@ -1,0 +1,27 @@
+.hero-section {
+  @apply py-16 md:py-24 bg-gradient-to-br from-primary-light/10 dark:from-primary-dark/20 to-secondary-light/10 dark:to-secondary-dark/20;
+}
+
+.hero-section_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.hero-section_content {
+  @apply text-center max-w-4xl mx-auto space-y-6;
+}
+
+.hero-section_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-primary-light dark:text-primary-dark;
+}
+
+.hero-section_subtitle {
+  @apply text-2xl md:text-3xl font-semibold text-text-light dark:text-text-dark;
+}
+
+.hero-section_description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75;
+}
+
+.hero-section_actions {
+  @apply flex justify-center gap-4 pt-4;
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Our Sectors",
+  "subtitle": "Comprehensive Business Solutions",
+  "description": "Explore our diverse range of specialized sectors",
+  "elevator": {
+    "title": "Elevator Sector",
+    "description": "Established in 2006 AD in order to keep pace with the urban renaissance that took place in the Kingdom",
+    "details": "Our elevator sector provides comprehensive solutions for vertical transportation, ensuring safety, efficiency, and modern technology."
+  },
+  "contracting": {
+    "title": "Contracting Sector",
+    "description": "Successfully implementing several projects, including residential, administrative and commercial buildings and other civil works in the public and private sectors",
+    "details": "We deliver high-quality construction projects with precision and excellence."
+  },
+  "manufacturing": {
+    "title": "Manufacturing Sector",
+    "description": "The National Materials Company (the industrial arm of Al-Othaim United Company) aims to carry out industrial and mining activities",
+    "details": "Leading industrial and manufacturing solutions with cutting-edge technology."
+  },
+  "development": {
+    "title": "Development Sector - Real Estate",
+    "description": "A multi-faceted type of business that includes activities ranging from the repair and renovation of existing buildings or leasing them",
+    "details": "Comprehensive real estate development and property management services."
+  },
+  "investments": {
+    "title": "Investments Sector",
+    "description": "In the field of private investments, we invest with partners in purchasing shares in existing companies, help companies finance their operations and expansions",
+    "details": "Strategic investments and partnerships for sustainable growth."
+  },
+  "hotel": {
+    "title": "Ajyad Hotel Services",
+    "description": "Al-Othaim Hospitality is distinguished by its comprehensive experience in providing its services and investment capabilities",
+    "details": "Premium hospitality services with exceptional guest experiences."
+  },
+  "consulting": {
+    "title": "Next Consulting Solutions",
+    "description": "Technology in the field of communications technology, Information, suggestions and solutions",
+    "details": "Advanced IT consulting and technology solutions for modern businesses."
+  },
+  "lowCurrent": {
+    "title": "Low Current Sector",
+    "description": "Projects, specialized works and modern systems",
+    "details": "Specialized low current systems and smart solutions."
+  },
+  "happyCheese": {
+    "title": "Happy Cheese",
+    "description": "Entertainment centers and restaurants",
+    "details": "Family entertainment and dining experiences."
+  }
+}

@@ -1,0 +1,68 @@
+<section class="hero-slider">
+  <!-- Header inside slider -->
+  <app-header class="hero-slider_header"></app-header>
+  
+  <div class="hero-slider_container">
+    <div class="hero-slider_wrapper">
+      <div 
+        *ngFor="let slide of slides; let i = index"
+        class="hero-slider_slide"
+        [class.hero-slider_slide-active]="currentSlide() === i"
+        [style.background-image]="'url(' + slide.image + ')'"
+      >
+        <!-- Light grey overlay on each slide image -->
+        <div class="hero-slider_overlay"></div>
+        <!-- Content above overlay -->
+        <div class="hero-slider_content">
+          <div class="hero-slider_content-inner">
+            <h1 class="hero-slider_title">
+              {{ slide.titleKey | translate }}
+            </h1>
+            <h2 class="hero-slider_subtitle">
+              {{ slide.subtitleKey | translate }}
+            </h2>
+            <p class="hero-slider_description">
+              {{ slide.descriptionKey | translate }}
+            </p>
+            <div class="hero-slider_actions">
+              <a [routerLink]="slide.ctaLink" class="btn btn-primary hero-slider_cta">
+                {{ slide.ctaKey | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button 
+      class="hero-slider_nav hero-slider_nav-prev"
+      (click)="prevSlide()"
+      aria-label="Previous slide"
+    >
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    <button 
+      class="hero-slider_nav hero-slider_nav-next"
+      (click)="nextSlide()"
+      aria-label="Next slide"
+    >
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <!-- Dots Indicator -->
+    <div class="hero-slider_dots">
+      <button
+        *ngFor="let slide of slides; let i = index"
+        class="hero-slider_dot"
+        [class.hero-slider_dot-active]="currentSlide() === i"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+      ></button>
+    </div>
+  </div>
+</section>

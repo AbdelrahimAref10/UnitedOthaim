@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: theme('colors.primary.light');
+    --color-secondary: theme('colors.secondary.light');
+    --color-background: theme('colors.background.light');
+    --color-surface: theme('colors.surface.light');
+    --color-text: theme('colors.text.light');
+    --color-border: theme('colors.border.light');
+  }
+
+  .dark {
+    --color-primary: theme('colors.primary.dark');
+    --color-secondary: theme('colors.secondary.dark');
+    --color-background: theme('colors.background.dark');
+    --color-surface: theme('colors.surface.dark');
+    --color-text: theme('colors.text.dark');
+    --color-border: theme('colors.border.dark');
+  }
+
+          html {
+            @apply antialiased;
+            scroll-behavior: smooth;
+          }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300;
+    margin: 0;
+    padding: 0;
+  }
+
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="ltr"] {
+    direction: ltr;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-button-primary-light dark:bg-button-primary-dark text-white hover:opacity-90 focus:ring-button-primary-light dark:focus:ring-button-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-button-secondary-light dark:bg-button-secondary-dark text-white hover:opacity-90 focus:ring-button-secondary-light dark:focus:ring-button-secondary-dark;
+  }
+
+  .btn-accent {
+    @apply bg-button-accent-light dark:bg-button-accent-dark text-white hover:opacity-90 focus:ring-button-accent-light dark:focus:ring-button-accent-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-button-primary-light dark:border-button-primary-dark text-button-primary-light dark:text-button-primary-dark hover:bg-button-primary-light dark:hover:bg-button-primary-dark hover:text-white;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-card-bg-light dark:bg-card-bg-dark border border-card-border-light dark:border-card-border-dark rounded-lg shadow-sm transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:scale-105 transition-transform duration-200;
+  }
+
+  /* Container styles */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section styles */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Text styles */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  .heading-4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

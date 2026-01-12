@@ -1,0 +1,11 @@
+.company-history {
+  @apply space-y-4;
+}
+
+.company-history_title {
+  @apply text-2xl md:text-3xl font-semibold text-primary-light dark:text-primary-dark mb-4;
+}
+
+.company-history_description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75 leading-relaxed;
+}

@@ -1,0 +1,19 @@
+.clients-page {
+  @apply bg-background-light dark:bg-background-dark;
+}
+
+.clients-page_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.clients-page_grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+}
+
+.clients-page_client {
+  @apply p-8 flex items-center justify-center min-h-[150px];
+}
+
+.clients-page_client-placeholder {
+  @apply text-text-light dark:text-text-dark opacity-50 text-center;
+}

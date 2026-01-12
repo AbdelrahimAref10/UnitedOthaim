@@ -1,0 +1,22 @@
+<div class="page-header">
+  <div class="page-header_content">
+    <h1 class="page-header_title" *ngIf="titleKey">
+      {{ titleKey | translate }}
+    </h1>
+    <h1 class="page-header_title" *ngIf="!titleKey && title">
+      {{ title }}
+    </h1>
+    <p class="page-header_subtitle" *ngIf="subtitleKey">
+      {{ subtitleKey | translate }}
+    </p>
+    <p class="page-header_subtitle" *ngIf="!subtitleKey && subtitle">
+      {{ subtitle }}
+    </p>
+    <p class="page-header_description" *ngIf="descriptionKey">
+      {{ descriptionKey | translate }}
+    </p>
+    <p class="page-header_description" *ngIf="!descriptionKey && description">
+      {{ description }}
+    </p>
+  </div>
+</div>

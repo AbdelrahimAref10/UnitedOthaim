@@ -1,0 +1,15 @@
+<app-page-header
+  titleKey="sectors.title"
+  subtitleKey="sectors.subtitle"
+  descriptionKey="sectors.description"
+></app-page-header>
+<div class="sectors-list-page section">
+  <div class="sectors-list-page_container">
+    <div class="sectors-list-page_grid">
+      <app-sector-card
+        *ngFor="let sector of sectors"
+        [sector]="sector"
+      ></app-sector-card>
+    </div>
+  </div>
+</div>

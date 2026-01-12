@@ -1,0 +1,17 @@
+<div class="sector-card card card-hover">
+  <div class="sector-card_content">
+    <div class="sector-card_header">
+      <h3 class="sector-card_title">
+        {{ i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name }}
+      </h3>
+    </div>
+    <p class="sector-card_description">
+      {{ i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description }}
+    </p>
+    <div class="sector-card_footer">
+      <a [routerLink]="'/sectors/' + sector.route" class="btn btn-primary">
+        {{ 'buttons.readMore' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

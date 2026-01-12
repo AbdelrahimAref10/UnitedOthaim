@@ -1,0 +1,60 @@
+<div class="home-page">
+  <app-hero-slider></app-hero-slider>
+  <app-mission-values></app-mission-values>
+  <app-services-section></app-services-section>
+  <app-featured-case></app-featured-case>
+  <app-news-section></app-news-section>
+  <app-stats-section></app-stats-section>
+  <app-why-choose-us></app-why-choose-us>
+  <app-testimonials-section></app-testimonials-section>
+  <app-clients-slider></app-clients-slider>
+  <app-team-slider></app-team-slider>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="home-section">
+    <div class="home-section_container">
+      <div class="home-section_header">
+        <div class="home-section_badge">
+          <span class="home-section_badge-text">{{ 'contact.title' | translate }}</span>
+        </div>
+        <h2 class="home-section_title">
+          {{ 'contact.title' | translate }}
+        </h2>
+        <p class="home-section_subtitle">
+          {{ 'contact.subtitle' | translate }}
+        </p>
+        <p class="home-section_description">
+          {{ 'contact.description' | translate }}
+        </p>
+      </div>
+      <div class="home-section_contact-content">
+        <div class="home-section_contact-form">
+          <app-contact-form (formSubmit)="onFormSubmit($event)"></app-contact-form>
+        </div>
+        <div class="home-section_contact-info">
+          <h3 class="home-section_contact-info-title">
+            {{ 'contact.info.title' | translate }}
+          </h3>
+          <div class="home-section_contact-info-details">
+            <p class="home-section_contact-info-item">
+              <span class="home-section_contact-info-label">{{ 'common.address' | translate }}:</span>
+              <span>{{ 'contact.info.address' | translate }}</span>
+            </p>
+            <p class="home-section_contact-info-item">
+              <span class="home-section_contact-info-label">{{ 'common.phone' | translate }}:</span>
+              <a href="tel:0112455555" class="home-section_contact-info-link">{{ 'contact.info.phone' | translate }}</a>
+            </p>
+            <p class="home-section_contact-info-item">
+              <span class="home-section_contact-info-label">Fax:</span>
+              <span>{{ 'contact.info.fax' | translate }}</span>
+            </p>
+            <p class="home-section_contact-info-item">
+              <span class="home-section_contact-info-label">{{ 'common.email' | translate }}:</span>
+              <a href="mailto:info@unitedothaim.com" class="home-section_contact-info-link">{{ 'contact.info.email' | translate }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

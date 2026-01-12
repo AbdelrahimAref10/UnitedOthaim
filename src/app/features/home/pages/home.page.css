@@ -1,0 +1,111 @@
+.home-page {
+  @apply w-full;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Section Styles */
+.home-section {
+  @apply py-16 md:py-24;
+  scroll-margin-top: 80px; /* Offset for fixed header */
+}
+
+.home-section_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.home-section_header {
+  @apply text-center mb-12 space-y-4;
+}
+
+.home-section_badge {
+  @apply inline-block mb-6;
+}
+
+.home-section_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.home-section_title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary-light dark:text-primary-dark;
+}
+
+.home-section_subtitle {
+  @apply text-xl md:text-2xl font-semibold text-text-light dark:text-text-dark;
+}
+
+.home-section_description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75 max-w-2xl mx-auto;
+}
+
+/* About Section Values */
+.home-section_values {
+  @apply mt-12;
+}
+
+.home-section_values-title {
+  @apply text-2xl md:text-3xl font-bold text-primary-light dark:text-primary-dark mb-8 text-center;
+}
+
+.home-section_values-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+.home-section_value {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300;
+}
+
+.home-section_value-title {
+  @apply text-xl font-semibold text-primary-light dark:text-primary-dark mb-3;
+}
+
+.home-section_value-description {
+  @apply text-text-light dark:text-text-dark opacity-75;
+}
+
+/* Team Section */
+.home-section_team-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+/* Contact Section */
+#contact.home-section {
+  @apply bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  background-color: #f9fafb;
+}
+
+.dark #contact.home-section {
+  background-color: #111827;
+}
+
+.home-section_contact-content {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12;
+}
+
+.home-section_contact-form {
+  @apply w-full bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700;
+}
+
+.home-section_contact-info {
+  @apply space-y-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700;
+}
+
+.home-section_contact-info-title {
+  @apply text-2xl font-bold text-primary-light dark:text-primary-dark mb-6;
+}
+
+.home-section_contact-info-details {
+  @apply space-y-4;
+}
+
+.home-section_contact-info-item {
+  @apply flex flex-col sm:flex-row gap-2 text-text-light dark:text-text-dark pb-4 border-b border-gray-200 dark:border-gray-700 last:border-b-0;
+}
+
+.home-section_contact-info-label {
+  @apply font-semibold min-w-[100px] sm:min-w-[120px] text-primary-light dark:text-primary-dark;
+}
+
+.home-section_contact-info-link {
+  @apply text-primary-light dark:text-primary-dark hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300;
+}

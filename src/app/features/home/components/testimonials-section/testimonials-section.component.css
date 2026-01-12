@@ -1,0 +1,67 @@
+.testimonials-section {
+  @apply py-20 md:py-32 bg-white dark:bg-gray-900;
+}
+
+.testimonials-section_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.testimonials-section_header {
+  @apply mb-16 text-center;
+}
+
+.testimonials-section_badge {
+  @apply inline-block mb-6;
+}
+
+.testimonials-section_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.testimonials-section_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white;
+}
+
+.testimonials-section_grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12;
+}
+
+.testimonials-section_item {
+  @apply bg-gray-50 dark:bg-gray-800 p-8 lg:p-12;
+}
+
+.testimonials-section_quote {
+  @apply mb-8;
+}
+
+.testimonials-section_quote-icon {
+  @apply w-12 h-12 text-secondary-light dark:text-secondary-dark mb-6;
+}
+
+.testimonials-section_text {
+  @apply text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic;
+}
+
+.testimonials-section_author {
+  @apply flex items-center gap-4;
+}
+
+.testimonials-section_author-image-wrapper {
+  @apply w-16 h-16 rounded-full overflow-hidden flex-shrink-0;
+}
+
+.testimonials-section_author-image {
+  @apply w-full h-full object-cover;
+}
+
+.testimonials-section_author-info {
+  @apply flex-1;
+}
+
+.testimonials-section_author-name {
+  @apply font-bold text-gray-900 dark:text-white mb-1;
+}
+
+.testimonials-section_author-position {
+  @apply text-sm text-gray-600 dark:text-gray-400;
+}

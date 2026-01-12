@@ -1,0 +1,219 @@
+.mission-values {
+  @apply py-24 md:py-32 lg:py-40 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-values::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.mission-values_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Section */
+.mission-values_header {
+  @apply text-center mb-20 md:mb-24;
+}
+
+.mission-values_header-badge {
+  @apply inline-block mb-6;
+}
+
+.mission-values_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.mission-values_title {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.mission-values_subtitle {
+  @apply text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed;
+  font-weight: 300;
+}
+
+.mission-values_divider {
+  @apply w-24 h-1 bg-gradient-to-r from-transparent via-secondary-light to-transparent mx-auto mt-8;
+}
+
+/* Mission & Values Cards */
+.mission-values_content {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-24;
+}
+
+.mission-values_card {
+  @apply relative bg-white dark:bg-gray-800 p-10 lg:p-14 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .mission-values_card {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.mission-values_card:hover {
+  transform: translateY(-8px);
+}
+
+.mission-values_card-header {
+  @apply flex items-center justify-between mb-8;
+}
+
+.mission-values_card-icon-wrapper {
+  @apply relative;
+}
+
+.mission-values_card-icon {
+  @apply text-5xl md:text-6xl;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.mission-values_card-number {
+  @apply text-6xl md:text-7xl font-black text-gray-100 dark:text-gray-700;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.mission-values_card-title {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mission-values_card-description {
+  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
+  line-height: 1.8;
+}
+
+.mission-values_card-accent {
+  @apply absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-light via-primary-light to-secondary-light;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.mission-values_card:hover .mission-values_card-accent {
+  transform: scaleX(1);
+}
+
+/* Company History */
+.mission-values_history {
+  @apply mb-24;
+}
+
+.mission-values_history-wrapper {
+  @apply bg-gradient-to-r from-primary-light/5 via-secondary-light/5 to-primary-light/5 dark:from-primary-dark/10 dark:via-secondary-dark/10 dark:to-primary-dark/10 rounded-2xl p-8 md:p-12 border border-gray-200 dark:border-gray-700;
+}
+
+.mission-values_history-content {
+  @apply flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8;
+}
+
+.mission-values_history-icon {
+  @apply flex-shrink-0 w-16 h-16 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/20 flex items-center justify-center text-secondary-light dark:text-secondary-dark;
+}
+
+.mission-values_history-icon svg {
+  @apply w-8 h-8;
+}
+
+.mission-values_history-text {
+  @apply flex-1;
+}
+
+.mission-values_history-title {
+  @apply text-2xl md:text-3xl font-bold text-primary-light dark:text-primary-dark mb-4;
+}
+
+.mission-values_history-description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-80 leading-relaxed;
+  line-height: 1.8;
+}
+
+/* Values Section */
+.mission-values_values-section {
+  @apply mt-16;
+}
+
+.mission-values_values-header {
+  @apply text-center mb-12;
+}
+
+.mission-values_values-title {
+  @apply text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-4;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.mission-values_values-subtitle {
+  @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+}
+
+.mission-values_values-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8;
+}
+
+.mission-values_value-card {
+  @apply relative bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden;
+}
+
+.mission-values_value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.mission-values_value-number {
+  @apply absolute top-4 right-4 text-4xl font-black text-gray-100 dark:text-gray-700;
+  font-weight: 900;
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.mission-values_value-content {
+  @apply relative z-10;
+}
+
+.mission-values_value-title {
+  @apply text-xl font-bold text-primary-light dark:text-primary-dark mb-3;
+  font-weight: 700;
+}
+
+.mission-values_value-description {
+  @apply text-base text-text-light dark:text-text-dark opacity-75 leading-relaxed;
+  line-height: 1.7;
+}
+
+.mission-values_value-line {
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary-light to-transparent;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.mission-values_value-card:hover .mission-values_value-line {
+  transform: scaleX(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-values_title {
+    @apply text-4xl;
+  }
+  
+  .mission-values_card {
+    @apply p-8;
+  }
+}

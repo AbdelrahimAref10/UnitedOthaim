@@ -1,0 +1,20 @@
+<section class="stats-section" #statsSection>
+  <div class="stats-section_container">
+    <div class="stats-section_header">
+      <div class="stats-section_badge">
+        <span class="stats-section_badge-text">{{ 'home.stats.title' | translate }}</span>
+      </div>
+      <h2 class="stats-section_title">
+        {{ 'home.stats.title' | translate }}
+      </h2>
+    </div>
+    <div class="stats-section_grid">
+      <div *ngFor="let stat of stats; let i = index" class="stats-section_stat">
+        <div class="stats-section_stat-value">{{ getDisplayValue(i) }}</div>
+        <div class="stats-section_stat-label">
+          {{ stat.key | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

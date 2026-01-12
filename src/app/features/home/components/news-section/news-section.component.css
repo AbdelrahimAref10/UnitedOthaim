@@ -1,0 +1,59 @@
+.news-section {
+  @apply py-20 md:py-32 bg-white dark:bg-gray-900;
+}
+
+.news-section_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.news-section_header {
+  @apply mb-16 text-center;
+}
+
+.news-section_badge {
+  @apply inline-block mb-6;
+}
+
+.news-section_badge-text {
+  @apply px-6 py-2 text-sm font-semibold uppercase tracking-wider text-secondary-light dark:text-secondary-dark bg-secondary-light/10 dark:bg-secondary-dark/20 rounded-full;
+}
+
+.news-section_title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white;
+}
+
+.news-section_grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.news-section_item {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-secondary-light dark:hover:border-secondary-dark transition-all duration-300 hover:shadow-xl cursor-pointer;
+}
+
+.news-section_item-image-wrapper {
+  @apply relative overflow-hidden;
+}
+
+.news-section_item-image {
+  @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
+}
+
+.news-section_item-category {
+  @apply absolute top-4 left-4 bg-primary-light text-white text-xs px-3 py-1 uppercase tracking-wider;
+}
+
+.news-section_item-content {
+  @apply p-6;
+}
+
+.news-section_item-title {
+  @apply text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors duration-300;
+}
+
+.news-section_item-excerpt {
+  @apply text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3;
+}
+
+.news-section_item-link {
+  @apply text-primary-light dark:text-primary-dark font-semibold text-sm hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300 inline-flex items-center gap-2;
+}

@@ -1,0 +1,19 @@
+.sector-detail-page {
+  @apply min-h-screen;
+}
+
+.sector-detail-page_content {
+  @apply bg-background-light dark:bg-background-dark;
+}
+
+.sector-detail-page_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.sector-detail-page_details {
+  @apply max-w-4xl mx-auto;
+}
+
+.sector-detail-page_text {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75 leading-relaxed;
+}

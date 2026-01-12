@@ -1,0 +1,39 @@
+<section class="about-section">
+  <div class="about-section_container">
+    <div class="about-section_content">
+      <div class="about-section_text">
+        <h2 class="about-section_title">
+          {{ 'home.about.title' | translate }}
+        </h2>
+        <p class="about-section_description">
+          {{ 'home.about.description' | translate }}
+        </p>
+        <a routerLink="/about" class="btn btn-outline about-section_cta">
+          {{ 'home.about.learnMore' | translate }}
+        </a>
+      </div>
+      <div class="about-section_image-wrapper">
+        <img 
+          src="assets/images/about-section.jpg" 
+          alt="About Us"
+          class="about-section_image"
+        />
+      </div>
+    </div>
+
+    <div class="about-section_features">
+      <div 
+        *ngFor="let feature of features"
+        class="about-section_feature"
+      >
+        <div class="about-section_feature-icon">{{ feature.icon }}</div>
+        <h3 class="about-section_feature-title">
+          {{ feature.titleKey | translate }}
+        </h3>
+        <p class="about-section_feature-description">
+          {{ feature.descriptionKey | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

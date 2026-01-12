@@ -1,0 +1,74 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+  <div class="contact-form_field">
+    <label class="contact-form_label" for="name">
+      {{ 'contact.form.name' | translate }}
+    </label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      class="contact-form_input"
+      [class.contact-form_input-error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+    />
+  </div>
+
+  <div class="contact-form_field">
+    <label class="contact-form_label" for="email">
+      {{ 'contact.form.email' | translate }}
+    </label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="contact-form_input"
+      [class.contact-form_input-error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+    />
+  </div>
+
+  <div class="contact-form_field">
+    <label class="contact-form_label" for="phone">
+      {{ 'contact.form.phone' | translate }}
+    </label>
+    <input
+      type="tel"
+      id="phone"
+      formControlName="phone"
+      class="contact-form_input"
+      [class.contact-form_input-error]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched"
+    />
+  </div>
+
+  <div class="contact-form_field">
+    <label class="contact-form_label" for="subject">
+      {{ 'contact.form.subject' | translate }}
+    </label>
+    <input
+      type="text"
+      id="subject"
+      formControlName="subject"
+      class="contact-form_input"
+      [class.contact-form_input-error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+    />
+  </div>
+
+  <div class="contact-form_field">
+    <label class="contact-form_label" for="message">
+      {{ 'contact.form.message' | translate }}
+    </label>
+    <textarea
+      id="message"
+      formControlName="message"
+      rows="5"
+      class="contact-form_textarea"
+      [class.contact-form_input-error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary w-full"
+    [disabled]="contactForm.invalid || isSubmitting"
+  >
+    {{ isSubmitting ? ('contact.form.sending' | translate) : ('contact.form.send' | translate) }}
+  </button>
+</form>

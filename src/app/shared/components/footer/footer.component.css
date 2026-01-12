@@ -1,0 +1,111 @@
+.footer {
+  @apply bg-gray-900 text-gray-300;
+}
+
+.footer_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+}
+
+.footer_content {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12;
+}
+
+.footer_section {
+  @apply space-y-4;
+}
+
+.footer_title {
+  @apply text-2xl font-bold text-white mb-4;
+}
+
+.footer_subtitle {
+  @apply text-lg font-semibold text-white mb-4;
+}
+
+.footer_subtitle-description {
+  @apply text-sm text-gray-400 mb-4;
+}
+
+.footer_description {
+  @apply text-gray-400 text-sm leading-relaxed;
+}
+
+.footer_newsletter {
+  @apply flex flex-col gap-2 mb-2;
+}
+
+.footer_newsletter-input {
+  @apply px-4 py-3 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-secondary-light transition-colors duration-300;
+}
+
+.footer_newsletter-button {
+  @apply px-6 py-3 bg-secondary-light hover:bg-secondary-dark text-white font-semibold uppercase tracking-wider transition-colors duration-300;
+}
+
+.footer_newsletter-note {
+  @apply text-xs text-gray-500 italic;
+}
+
+.footer_news {
+  @apply space-y-4;
+}
+
+.footer_news-item {
+  @apply flex flex-col gap-1;
+}
+
+.footer_news-link {
+  @apply text-gray-300 hover:text-secondary-light transition-colors duration-300 text-sm;
+}
+
+.footer_news-date {
+  @apply text-xs text-gray-500;
+}
+
+.footer_links {
+  @apply space-y-2;
+}
+
+.footer_link {
+  @apply text-gray-400 hover:text-secondary-light transition-colors duration-200 text-sm;
+}
+
+.footer_contact {
+  @apply space-y-3;
+}
+
+.footer_contact-item {
+  @apply text-sm text-gray-400;
+}
+
+.footer_contact-label {
+  @apply font-semibold text-white;
+}
+
+.footer_contact-link {
+  @apply hover:text-secondary-light transition-colors duration-200;
+}
+
+.footer_bottom {
+  @apply pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4;
+}
+
+.footer_social {
+  @apply flex flex-col gap-2;
+}
+
+.footer_social-title {
+  @apply text-sm font-semibold text-white mb-2;
+}
+
+.footer_social-links {
+  @apply flex gap-4;
+}
+
+.footer_social-link {
+  @apply text-gray-400 hover:text-secondary-light transition-colors duration-200 text-sm;
+}
+
+.footer_copyright {
+  @apply text-sm text-gray-500;
+}

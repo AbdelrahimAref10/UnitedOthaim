@@ -1,0 +1,19 @@
+.vision-page {
+  @apply bg-background-light dark:bg-background-dark;
+}
+
+.vision-page_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.vision-page_content {
+  @apply max-w-3xl mx-auto text-center space-y-6;
+}
+
+.vision-page_title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary-light dark:text-primary-dark;
+}
+
+.vision-page_description {
+  @apply text-lg text-text-light dark:text-text-dark opacity-75 leading-relaxed;
+}

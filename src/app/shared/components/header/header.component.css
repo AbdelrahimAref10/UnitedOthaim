@@ -1,0 +1,126 @@
+.header {
+  @apply absolute top-0 left-0 right-0 z-50 transition-all duration-300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100vw;
+}
+
+.header.header-transparent {
+  @apply bg-transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header.header-scrolled,
+.header:not(.header-transparent) {
+  @apply bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .header.header-scrolled,
+.dark .header:not(.header-transparent) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header_nav {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.header_container {
+  @apply flex items-center justify-between h-16 md:h-20;
+}
+
+.header_logo {
+  @apply text-xl md:text-2xl font-bold text-white hover:text-secondary-light transition-colors duration-300;
+  color: white !important;
+}
+
+.header-scrolled .header_logo {
+  @apply text-primary-light dark:text-primary-dark;
+}
+
+.header_logo-text {
+  @apply font-arabic;
+}
+
+.header_menu-toggle {
+  @apply md:hidden p-2 rounded-lg text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-secondary-light transition-colors duration-300;
+  color: white !important;
+}
+
+.header-scrolled .header_menu-toggle {
+  @apply text-text-light dark:text-text-dark hover:bg-surface-light dark:hover:bg-surface-dark;
+}
+
+.header_menu-icon {
+  @apply w-6 h-6;
+}
+
+.header_menu {
+  @apply hidden md:flex items-center gap-6;
+}
+
+.header_menu-open {
+  @apply flex flex-col absolute top-16 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 shadow-lg p-4 gap-4;
+}
+
+.header_link {
+  @apply px-3 py-2 rounded-lg font-medium text-white hover:text-secondary-light transition-colors duration-200;
+  color: white !important;
+}
+
+.header-scrolled .header_link {
+  @apply text-text-light dark:text-text-dark hover:text-secondary-light;
+}
+
+.header_link-active {
+  @apply text-secondary-light;
+}
+
+.header-scrolled .header_link-active {
+  @apply text-primary-light dark:text-primary-dark;
+}
+
+.header_actions {
+  @apply flex items-center gap-3;
+}
+
+/* Ensure all header elements are white on slider */
+.hero-slider_header .header_logo,
+.hero-slider_header .header_link,
+.hero-slider_header .header_menu-toggle {
+  color: white !important;
+}
+
+.hero-slider_header .header_actions button,
+.hero-slider_header .header_actions svg {
+  color: white !important;
+  fill: white !important;
+}
+
+.hero-slider_header .theme-toggle {
+  @apply bg-white/20 text-white hover:bg-white/30;
+}
+
+.hero-slider_header .language-switcher_button {
+  @apply bg-white/20 text-white hover:bg-white/30;
+}
+
+.hero-slider_header .language-switcher_button-active {
+  @apply bg-white/40 text-white;
+}
+
+/* Header on top of page (non-home pages) */
+.app_header-top {
+  @apply relative static bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm;
+}
+
+.app_header-top .header_logo {
+  @apply text-primary-light dark:text-primary-dark;
+}
+
+.app_header-top .header_link {
+  @apply text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark;
+}
+
+.app_header-top .header_link-active {
+  @apply bg-primary-light dark:bg-primary-dark text-white;
+}

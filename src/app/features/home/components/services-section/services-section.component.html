@@ -1,0 +1,46 @@
+<section class="services-section">
+  <div class="services-section_container">
+    <div class="services-section_header">
+      <div class="services-section_badge">
+        <span class="services-section_badge-text">{{ 'home.services.subtitle' | translate }}</span>
+      </div>
+      <h2 class="services-section_title">
+        {{ 'home.services.title' | translate }}
+      </h2>
+    </div>
+
+    <div class="services-section_grid">
+      <div 
+        *ngFor="let service of services"
+        class="services-section_card group"
+        [routerLink]="'/sectors/' + service.route"
+      >
+        <div class="services-section_card-image-wrapper">
+          <img 
+            [src]="getServiceImage(service.id)"
+            [alt]="service.name"
+            class="services-section_card-image"
+          />
+          <div class="services-section_card-overlay"></div>
+        </div>
+        <div class="services-section_card-content">
+          <h3 class="services-section_card-title">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? service.nameAr : service.name }}
+          </h3>
+          <p class="services-section_card-description">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? service.descriptionAr : service.description }}
+          </p>
+          <span class="services-section_card-link">
+            {{ 'buttons.readMore' | translate }} →
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-section_footer">
+      <a routerLink="/sectors" class="btn btn-primary services-section_view-all">
+        {{ 'home.services.viewAll' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

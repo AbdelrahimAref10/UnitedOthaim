@@ -1,0 +1,31 @@
+.about-page {
+  @apply bg-background-light dark:bg-background-dark;
+}
+
+.about-page_container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12;
+}
+
+.about-page_values {
+  @apply space-y-8;
+}
+
+.about-page_values-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary-light dark:text-primary-dark text-center;
+}
+
+.about-page_values-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.about-page_value {
+  @apply bg-card-bg-light dark:bg-card-bg-dark border border-card-border-light dark:border-card-border-dark rounded-lg shadow-sm transition-all duration-200 p-6;
+}
+
+.about-page_value-title {
+  @apply text-xl md:text-2xl font-semibold text-primary-light dark:text-primary-dark mb-2;
+}
+
+.about-page_value-description {
+  @apply text-text-light dark:text-text-dark opacity-75;
+}
