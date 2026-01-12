@@ -1,13 +1,10 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
 
 interface Client {
   id: string;
-  name: string;
-  nameAr: string;
   logo: string;
-  website?: string;
 }
 
 @Component({
@@ -17,93 +14,88 @@ interface Client {
   templateUrl: './clients-slider.component.html',
   styleUrl: './clients-slider.component.css'
 })
-export class ClientsSliderComponent implements OnInit {
-  currentIndex = signal(0);
-  clients: Client[] = [
-    {
-      id: '1',
-      name: 'Client 1',
-      nameAr: 'عميل 1',
-      logo: 'assets/images/clients/client-1.png'
-    },
-    {
-      id: '2',
-      name: 'Client 2',
-      nameAr: 'عميل 2',
-      logo: 'assets/images/clients/client-2.png'
-    },
-    {
-      id: '3',
-      name: 'Client 3',
-      nameAr: 'عميل 3',
-      logo: 'assets/images/clients/client-3.png'
-    },
-    {
-      id: '4',
-      name: 'Client 4',
-      nameAr: 'عميل 4',
-      logo: 'assets/images/clients/client-4.png'
-    },
-    {
-      id: '5',
-      name: 'Client 5',
-      nameAr: 'عميل 5',
-      logo: 'assets/images/clients/client-5.png'
-    },
-    {
-      id: '6',
-      name: 'Client 6',
-      nameAr: 'عميل 6',
-      logo: 'assets/images/clients/client-6.png'
-    },
-    {
-      id: '7',
-      name: 'Client 7',
-      nameAr: 'عميل 7',
-      logo: 'assets/images/clients/client-7.png'
-    },
-    {
-      id: '8',
-      name: 'Client 8',
-      nameAr: 'عميل 8',
-      logo: 'assets/images/clients/client-8.png'
-    }
-  ];
+export class ClientsSliderComponent implements OnInit, OnDestroy {
+  scrollPosition = signal(0);
+  isPaused = signal(false);
+  private autoScrollInterval?: any;
+  private animationFrame?: number;
+
+  clients: Client[] = [];
+
+  constructor() {
+    // Effect to handle smooth scrolling
+    effect(() => {
+      if (!this.isPaused() && this.autoScrollInterval) {
+        // Animation is handled by CSS, we just update position
+      }
+    });
+  }
 
   ngOnInit(): void {
-    this.startAutoSlide();
-  }
-
-  startAutoSlide(): void {
-    setInterval(() => {
-      this.nextSlide();
-    }, 3000);
-  }
-
-  nextSlide(): void {
-    const visibleCount = this.getVisibleCount();
-    const maxIndex = Math.max(0, this.clients.length - visibleCount);
-    this.currentIndex.set((this.currentIndex() + 1) % (maxIndex + 1));
-  }
-
-  prevSlide(): void {
-    const visibleCount = this.getVisibleCount();
-    const maxIndex = Math.max(0, this.clients.length - visibleCount);
-    this.currentIndex.set((this.currentIndex() - 1 + maxIndex + 1) % (maxIndex + 1));
-  }
-
-  getVisibleCount(): number {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 5;
-      if (window.innerWidth >= 768) return 3;
-      return 2;
+    // Generate 39 clients
+    for (let i = 1; i <= 39; i++) {
+      this.clients.push({
+        id: i.toString(),
+        logo: `assets/images/clients/client-${i}.avif`
+      });
     }
-    return 5;
+    
+    // Duplicate clients for seamless infinite scroll
+    this.clients = [...this.clients, ...this.clients, ...this.clients];
+    
+    this.startAutoScroll();
   }
 
-  getVisibleClients(): Client[] {
-    const count = this.getVisibleCount();
-    const start = this.currentIndex();
-    return this.clients.slice(start, start + count);
+  ngOnDestroy(): void {
+    if (this.autoScrollInterval) {
+      clearInterval(this.autoScrollInterval);
+    }
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+    }
+  }
+
+  startAutoScroll(): void {
+    const scrollSpeed = 0.5; // pixels per frame
+    let currentPosition = 0;
+    const gap = 32; // gap-8 = 32px
+
+    const getClientWidth = (): number => {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth >= 1024) return 220 + gap; // Desktop (220px)
+        if (window.innerWidth >= 768) return 180 + gap; // Tablet (180px)
+        return 150 + gap; // Mobile (150px)
+      }
+      return 220 + gap; // Default
+    };
+
+    const animate = () => {
+      if (!this.isPaused()) {
+        const clientWidth = getClientWidth();
+        const totalUniqueWidth = 39 * clientWidth;
+        
+        currentPosition += scrollSpeed;
+        
+        // Reset position when we've scrolled through one set of clients
+        // This creates seamless infinite scroll
+        if (currentPosition >= totalUniqueWidth) {
+          currentPosition = currentPosition - totalUniqueWidth;
+        }
+        
+        this.scrollPosition.set(currentPosition);
+      }
+      
+      this.animationFrame = requestAnimationFrame(animate);
+    };
+    
+    animate();
+  }
+
+  onMouseEnter(): void {
+    this.isPaused.set(true);
+  }
+
+  onMouseLeave(): void {
+    this.isPaused.set(false);
   }
 }

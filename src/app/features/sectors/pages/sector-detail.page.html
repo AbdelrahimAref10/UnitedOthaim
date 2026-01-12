@@ -1,16 +1,54 @@
 <div class="sector-detail-page">
-  <app-page-header
-    [title]="sector ? (i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name) : ''"
-    [subtitle]="sector ? (i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description) : ''"
-  ></app-page-header>
-  <div class="sector-detail-page_content section">
+  <!-- Hero Section with Image -->
+  <section class="sector-detail-hero" *ngIf="sector">
+    <div 
+      class="sector-detail-hero_background"
+      [style.background-image]="'url(assets/images/services/' + sector.image + ')'"
+    >
+      <div class="sector-detail-hero_overlay"></div>
+      <div class="sector-detail-hero_content">
+        <div class="sector-detail-hero_container">
+          <h1 class="sector-detail-hero_title">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name }}
+          </h1>
+          <p class="sector-detail-hero_subtitle">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="sector-detail-page_content section" *ngIf="sector">
     <div class="sector-detail-page_container">
-      <div class="sector-detail-page_details" *ngIf="sector">
-        <p class="sector-detail-page_text">
-          {{ i18nService.getCurrentLanguage() === 'ar' 
-            ? ('sectors.' + sector.id + '.details' | translate)
-            : ('sectors.' + sector.id + '.details' | translate) }}
-        </p>
+      <div class="sector-detail-page_wrapper">
+        <!-- Image Section -->
+        <div class="sector-detail-page_image-section">
+          <div class="sector-detail-page_image-wrapper">
+            <img 
+              [src]="'assets/images/services/' + sector.image"
+              [alt]="i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name"
+              class="sector-detail-page_image"
+            />
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="sector-detail-page_details">
+          <div class="sector-detail-page_content-box">
+            <h2 class="sector-detail-page_section-title">
+              {{ 'sectors.about' | translate }}
+            </h2>
+            <div class="sector-detail-page_text">
+              <p>
+                {{ i18nService.getCurrentLanguage() === 'ar' 
+                  ? ('sectors.' + sector.id + '.details' | translate)
+                  : ('sectors.' + sector.id + '.details' | translate) }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

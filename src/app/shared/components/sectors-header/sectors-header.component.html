@@ -1,0 +1,41 @@
+<header class="sectors-header">
+  <nav class="sectors-header_nav">
+    <div class="sectors-header_container">
+      <a routerLink="/" class="sectors-header_logo">
+        <span class="sectors-header_logo-text">United Othaim</span>
+      </a>
+      
+      <button
+        type="button"
+        class="sectors-header_menu-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Toggle menu"
+      >
+        <svg class="sectors-header_menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path *ngIf="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <path *ngIf="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="sectors-header_menu" [class.sectors-header_menu-open]="isMobileMenuOpen">
+        <a
+          *ngFor="let link of navLinks"
+          [routerLink]="link.route"
+          [fragment]="link.section || undefined"
+          routerLinkActive="sectors-header_link-active"
+          [routerLinkActiveOptions]="{ exact: link.route === '/' && !link.section }"
+          class="sectors-header_link"
+          (click)="navigateToSection(link.route, link.section)"
+        >
+          {{ link.key | translate }}
+        </a>
+      </div>
+
+      <div class="sectors-header_actions">
+        <app-language-switcher></app-language-switcher>
+        <app-theme-toggle></app-theme-toggle>
+      </div>
+    </div>
+  </nav>
+</header>

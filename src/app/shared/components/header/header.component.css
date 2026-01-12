@@ -1,7 +1,6 @@
 .header {
-  @apply absolute top-0 left-0 right-0 z-50 transition-all duration-300;
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  width: 100vw;
 }
 
 .header.header-transparent {
@@ -9,10 +8,26 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.header.header-scrolled,
-.header:not(.header-transparent) {
-  @apply bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm;
+.header.header-transparent .header_logo,
+.header.header-transparent .header_link,
+.header.header-transparent .header_menu-toggle {
+  color: white !important;
+}
+
+.header.header-transparent .header_actions button,
+.header.header-transparent .header_actions svg {
+  color: white !important;
+  fill: white !important;
+}
+
+.header.header-scrolled {
+  @apply bg-white dark:bg-gray-900 shadow-sm;
+  background-color: #ffffff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .header.header-scrolled {
+  background-color: #111827 !important;
 }
 
 .dark .header.header-scrolled,
@@ -33,8 +48,12 @@
   color: white !important;
 }
 
-.header-scrolled .header_logo {
-  @apply text-primary-light dark:text-primary-dark;
+.header.header-scrolled .header_logo {
+  color: #000000 !important;
+}
+
+.dark .header.header-scrolled .header_logo {
+  color: #ffffff !important;
 }
 
 .header_logo-text {
@@ -46,8 +65,16 @@
   color: white !important;
 }
 
-.header-scrolled .header_menu-toggle {
-  @apply text-text-light dark:text-text-dark hover:bg-surface-light dark:hover:bg-surface-dark;
+.header.header-scrolled .header_menu-toggle {
+  color: #000000 !important;
+}
+
+.header.header-scrolled .header_menu-toggle:hover {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.dark .header.header-scrolled .header_menu-toggle {
+  color: #ffffff !important;
 }
 
 .header_menu-icon {
@@ -67,46 +94,52 @@
   color: white !important;
 }
 
-.header-scrolled .header_link {
-  @apply text-text-light dark:text-text-dark hover:text-secondary-light;
+.header.header-scrolled .header_link {
+  color: #000000 !important;
+}
+
+.header.header-scrolled .header_link:hover {
+  color: var(--primary-color) !important;
+}
+
+.dark .header.header-scrolled .header_link {
+  color: #ffffff !important;
 }
 
 .header_link-active {
   @apply text-secondary-light;
 }
 
-.header-scrolled .header_link-active {
-  @apply text-primary-light dark:text-primary-dark;
+.header.header-transparent .header_link-active {
+  @apply text-secondary-light;
+}
+
+.header.header-scrolled .header_link-active {
+  color: var(--primary-color) !important;
 }
 
 .header_actions {
   @apply flex items-center gap-3;
 }
 
-/* Ensure all header elements are white on slider */
-.hero-slider_header .header_logo,
-.hero-slider_header .header_link,
-.hero-slider_header .header_menu-toggle {
-  color: white !important;
-}
-
-.hero-slider_header .header_actions button,
-.hero-slider_header .header_actions svg {
+.header.header-transparent .header_actions button,
+.header.header-transparent .header_actions svg {
   color: white !important;
   fill: white !important;
 }
 
-.hero-slider_header .theme-toggle {
-  @apply bg-white/20 text-white hover:bg-white/30;
+.header.header-scrolled .header_actions button,
+.header.header-scrolled .header_actions svg {
+  color: #000000 !important;
+  fill: #000000 !important;
 }
 
-.hero-slider_header .language-switcher_button {
-  @apply bg-white/20 text-white hover:bg-white/30;
+.dark .header.header-scrolled .header_actions button,
+.dark .header.header-scrolled .header_actions svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
-.hero-slider_header .language-switcher_button-active {
-  @apply bg-white/40 text-white;
-}
 
 /* Header on top of page (non-home pages) */
 .app_header-top {
@@ -123,4 +156,78 @@
 
 .app_header-top .header_link-active {
   @apply bg-primary-light dark:bg-primary-dark text-white;
+}
+
+/* Header for sectors page - white background with black links */
+.app_header-sectors {
+  @apply relative static bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm;
+  background-color: #ffffff !important;
+}
+
+.dark .app_header-sectors {
+  background-color: #111827 !important;
+}
+
+.app_header-sectors .header_logo,
+.app_header-sectors.header-scrolled .header_logo {
+  color: #000000 !important;
+}
+
+.dark .app_header-sectors .header_logo,
+.dark .app_header-sectors.header-scrolled .header_logo {
+  color: #ffffff !important;
+}
+
+.app_header-sectors .header_link,
+.app_header-sectors.header-scrolled .header_link,
+.app_header-sectors .header_link:hover,
+.app_header-sectors.header-scrolled .header_link:hover {
+  color: #000000 !important;
+}
+
+.app_header-sectors .header_link:hover,
+.app_header-sectors.header-scrolled .header_link:hover {
+  color: var(--primary-color) !important;
+}
+
+.dark .app_header-sectors .header_link,
+.dark .app_header-sectors.header-scrolled .header_link {
+  color: #ffffff !important;
+}
+
+.app_header-sectors .header_link-active,
+.app_header-sectors.header-scrolled .header_link-active {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+
+.dark .app_header-sectors .header_link-active,
+.dark .app_header-sectors.header-scrolled .header_link-active {
+  color: #ffffff !important;
+}
+
+.app_header-sectors .header_menu-toggle,
+.app_header-sectors.header-scrolled .header_menu-toggle {
+  color: #000000 !important;
+}
+
+.dark .app_header-sectors .header_menu-toggle,
+.dark .app_header-sectors.header-scrolled .header_menu-toggle {
+  color: #ffffff !important;
+}
+
+.app_header-sectors .header_actions button,
+.app_header-sectors .header_actions svg,
+.app_header-sectors.header-scrolled .header_actions button,
+.app_header-sectors.header-scrolled .header_actions svg {
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+.dark .app_header-sectors .header_actions button,
+.dark .app_header-sectors .header_actions svg,
+.dark .app_header-sectors.header-scrolled .header_actions button,
+.dark .app_header-sectors.header-scrolled .header_actions svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }

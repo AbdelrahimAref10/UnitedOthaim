@@ -5,7 +5,7 @@ export interface Sector {
   description: string;
   descriptionAr: string;
   icon?: string;
-  image?: string;
+  image: string;
   color?: string;
   route: string;
   details?: SectorDetails;

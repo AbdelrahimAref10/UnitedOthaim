@@ -24,7 +24,7 @@ export class ServicesSectionComponent implements OnInit {
     });
   }
 
-  getServiceImage(serviceId: string): string {
-    return `assets/images/services/${serviceId}`;
+  getServiceImage(image: string): string {
+    return `assets/images/services/${image}`;
   }
 }

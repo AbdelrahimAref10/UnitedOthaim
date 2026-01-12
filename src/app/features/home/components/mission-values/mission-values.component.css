@@ -1,5 +1,5 @@
 .mission-values {
-  @apply py-24 md:py-32 lg:py-40 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  @apply py-16 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
   position: relative;
   overflow: hidden;
 }

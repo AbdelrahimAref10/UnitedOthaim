@@ -100,11 +100,23 @@ export class I18nService {
     
     const [namespace, ...keyParts] = key.split('.');
     
+    // Special handling for nav.* keys - always check common.json first
+    if (namespace === 'nav') {
+      const common = this.translations.get(`${lang}.common`);
+      if (common) {
+        const value = this.getNestedValue(common, key);
+        if (value && typeof value === 'string') {
+          return this.interpolate(value, params);
+        }
+      }
+    }
+    
     // Try to find translation in namespace files
     const translationFiles = ['common', 'home', 'about', 'sectors', 'clients', 'team', 'contact'];
     
-    for (const file of translationFiles) {
-      const translation = this.translations.get(`${lang}.${file}`);
+    // First, try to find in the namespace file (if namespace matches a file)
+    if (translationFiles.includes(namespace)) {
+      const translation = this.translations.get(`${lang}.${namespace}`);
       if (translation) {
         const value = this.getNestedValue(translation, keyParts.join('.'));
         if (value && typeof value === 'string') {
@@ -112,8 +124,21 @@ export class I18nService {
         }
       }
     }
+    
+    // Fallback: search in all files (but skip if we already checked common for nav keys)
+    if (namespace !== 'nav') {
+      for (const file of translationFiles) {
+        const translation = this.translations.get(`${lang}.${file}`);
+        if (translation) {
+          const value = this.getNestedValue(translation, keyParts.join('.'));
+          if (value && typeof value === 'string') {
+            return this.interpolate(value, params);
+          }
+        }
+      }
+    }
 
-    // Fallback: try direct key lookup in common
+    // Final fallback: try direct key lookup in common
     const common = this.translations.get(`${lang}.common`);
     if (common) {
       const value = this.getNestedValue(common, key);

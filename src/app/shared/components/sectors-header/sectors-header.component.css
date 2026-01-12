@@ -1,0 +1,99 @@
+.sectors-header {
+  @apply relative static bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm z-50;
+  background-color: #ffffff !important;
+  position: relative;
+}
+
+.dark .sectors-header {
+  background-color: #111827 !important;
+}
+
+.sectors-header_nav {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.sectors-header_container {
+  @apply flex items-center justify-between h-16 md:h-20;
+}
+
+.sectors-header_logo {
+  @apply text-xl md:text-2xl font-bold transition-colors duration-300;
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+.dark .sectors-header_logo {
+  color: #ffffff !important;
+}
+
+.sectors-header_logo:hover {
+  color: var(--primary-color) !important;
+}
+
+.sectors-header_logo-text {
+  @apply font-arabic;
+}
+
+.sectors-header_menu-toggle {
+  @apply md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-light transition-colors duration-300;
+  color: #000000 !important;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dark .sectors-header_menu-toggle {
+  color: #ffffff !important;
+}
+
+.sectors-header_menu-toggle:hover {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.sectors-header_menu-icon {
+  @apply w-6 h-6;
+}
+
+.sectors-header_menu {
+  @apply hidden md:flex items-center gap-6;
+}
+
+.sectors-header_menu-open {
+  @apply flex flex-col absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-lg p-4 gap-4;
+  z-index: 100;
+}
+
+.sectors-header_link {
+  @apply px-3 py-2 rounded-lg font-medium transition-colors duration-200;
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+.dark .sectors-header_link {
+  color: #ffffff !important;
+}
+
+.sectors-header_link:hover {
+  color: var(--primary-color) !important;
+}
+
+.sectors-header_link-active {
+  @apply font-semibold;
+  color: var(--primary-color) !important;
+}
+
+.sectors-header_actions {
+  @apply flex items-center gap-3;
+}
+
+.sectors-header_actions button,
+.sectors-header_actions svg {
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+.dark .sectors-header_actions button,
+.dark .sectors-header_actions svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}

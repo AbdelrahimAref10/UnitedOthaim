@@ -1,17 +1,28 @@
-<div class="sector-card card card-hover">
-  <div class="sector-card_content">
-    <div class="sector-card_header">
+<div class="sector-card">
+  <a [routerLink]="'/sectors/' + sector.route" class="sector-card_link">
+    <div class="sector-card_image-wrapper">
+      <img 
+        [src]="'assets/images/services/' + sector.image"
+        [alt]="i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name"
+        class="sector-card_image"
+      />
+      <div class="sector-card_overlay"></div>
+    </div>
+    <div class="sector-card_content">
       <h3 class="sector-card_title">
         {{ i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name }}
       </h3>
+      <p class="sector-card_description">
+        {{ i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description }}
+      </p>
+      <div class="sector-card_footer">
+        <span class="sector-card_cta">
+          {{ 'buttons.readMore' | translate }}
+          <svg class="sector-card_arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </span>
+      </div>
     </div>
-    <p class="sector-card_description">
-      {{ i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description }}
-    </p>
-    <div class="sector-card_footer">
-      <a [routerLink]="'/sectors/' + sector.route" class="btn btn-primary">
-        {{ 'buttons.readMore' | translate }}
-      </a>
-    </div>
-  </div>
+  </a>
 </div>

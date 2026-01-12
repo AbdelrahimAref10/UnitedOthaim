@@ -7,7 +7,6 @@ import { FeaturedCaseComponent } from '../components/featured-case/featured-case
 import { NewsSectionComponent } from '../components/news-section/news-section.component';
 import { StatsSectionComponent } from '../components/stats-section/stats-section.component';
 import { WhyChooseUsComponent } from '../components/why-choose-us/why-choose-us.component';
-import { TestimonialsSectionComponent } from '../components/testimonials-section/testimonials-section.component';
 import { ClientsSliderComponent } from '../components/clients-slider/clients-slider.component';
 import { TeamSliderComponent } from '../components/team-slider/team-slider.component';
 import { ContactFormComponent } from '../../../shared/components/contact-form/contact-form.component';
@@ -26,7 +25,6 @@ import { ContactForm } from '../../../core/models/contact.model';
     NewsSectionComponent,
     StatsSectionComponent,
     WhyChooseUsComponent,
-    TestimonialsSectionComponent,
     ClientsSliderComponent,
     TeamSliderComponent,
     ContactFormComponent,

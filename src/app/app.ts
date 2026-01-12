@@ -38,4 +38,8 @@ export class App implements OnInit {
   isHomePage(): boolean {
     return this.currentUrl === '/' || this.currentUrl === '';
   }
+
+  isSectorsPage(): boolean {
+    return this.currentUrl.startsWith('/sectors');
+  }
 }

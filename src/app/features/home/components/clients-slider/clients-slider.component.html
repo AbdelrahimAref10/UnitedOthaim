@@ -12,39 +12,27 @@
       </p>
     </div>
 
-    <div class="clients-slider_wrapper">
-      <button 
-        class="clients-slider_nav clients-slider_nav-prev"
-        (click)="prevSlide()"
-        aria-label="Previous"
+    <div 
+      class="clients-slider_wrapper"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+    >
+      <div 
+        class="clients-slider_logos"
+        [class.clients-slider_paused]="isPaused()"
+        [style.transform]="'translateX(-' + scrollPosition() + 'px)'"
       >
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-
-      <div class="clients-slider_logos">
         <div 
-          *ngFor="let client of getVisibleClients()"
+          *ngFor="let client of clients"
           class="clients-slider_logo-wrapper"
         >
           <img 
             [src]="client.logo"
-            [alt]="client.name"
+            [alt]="'Client ' + client.id"
             class="clients-slider_logo"
           />
         </div>
       </div>
-
-      <button 
-        class="clients-slider_nav clients-slider_nav-next"
-        (click)="nextSlide()"
-        aria-label="Next"
-      >
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
     </div>
   </div>
 </section>

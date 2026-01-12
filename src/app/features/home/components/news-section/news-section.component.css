@@ -1,5 +1,5 @@
 .news-section {
-  @apply py-20 md:py-32 bg-white dark:bg-gray-900;
+  @apply py-16 bg-white dark:bg-gray-900;
 }
 
 .news-section_container {

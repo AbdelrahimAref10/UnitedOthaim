@@ -1,6 +1,5 @@
 <div class="app">
-  <!-- Header for non-home pages (home page has header inside slider) -->
-  <app-header *ngIf="!isHomePage()" class="app_header-top"></app-header>
+  <!-- Header for non-home pages (home page has header inside slider, sectors page has its own header) -->
   <main class="app_main">
     <router-outlet></router-outlet>
   </main>

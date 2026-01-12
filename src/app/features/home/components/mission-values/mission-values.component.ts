@@ -7,7 +7,7 @@ import { CompanyHistoryComponent } from '../../../about/components/company-histo
 @Component({
   selector: 'app-mission-values',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslatePipe, CompanyHistoryComponent],
+  imports: [CommonModule, RouterModule, TranslatePipe],
   templateUrl: './mission-values.component.html',
   styleUrl: './mission-values.component.css'
 })

@@ -6,7 +6,7 @@
 
 /* Section Styles */
 .home-section {
-  @apply py-16 md:py-24;
+  @apply py-16;
   scroll-margin-top: 80px; /* Offset for fixed header */
 }
 

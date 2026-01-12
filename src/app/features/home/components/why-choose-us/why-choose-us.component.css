@@ -1,5 +1,5 @@
 .why-choose-us {
-  @apply py-20 md:py-32 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  @apply py-16 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
   position: relative;
   overflow: hidden;
 }
