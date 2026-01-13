@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
-import { CompanyHistoryComponent } from '../../../about/components/company-history/company-history.component';
 
 @Component({
   selector: 'app-mission-values',
