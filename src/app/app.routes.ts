@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
-import { homeRoutes } from './features/home/home.routes';
+import { HomePage } from './features/home/pages/home.page';
 
 export const routes: Routes = [
-  ...homeRoutes,
-  // Keep sectors route for "View All" button
+  {
+    path: '',
+    component: HomePage
+  },
   {
     path: 'sectors',
     loadChildren: () => import('./features/sectors/sectors.routes').then(m => m.sectorsRoutes)
   },
-  // Redirect old routes to home with fragments for smooth scroll
   {
     path: 'about',
     redirectTo: '/#about'
