@@ -103,5 +103,9 @@
   "clients": {
     "title": "Our Clients",
     "subtitle": "Trusted by Leading Organizations"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the People Behind Our Success"
   }
 }

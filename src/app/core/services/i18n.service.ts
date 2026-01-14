@@ -30,7 +30,8 @@ export class I18nService {
     // Load default language on init
     this.loadLanguage(initialLang).subscribe({
       next: () => {
-        // Translations loaded
+        console.log(`✓ Translations loaded for language: ${initialLang}`);
+        console.log(`  Loaded ${this.translations.size} translation files`);
       },
       error: (err) => {
         console.error('Failed to load translations:', err);
@@ -55,10 +56,14 @@ export class I18nService {
     // This works both locally (base href="/") and on GitHub Pages (base href="/UnitedOthaim/")
     const loadPromises = translationFiles.map(file => 
       this.http.get<TranslationData>(`assets/i18n/${lang}/${file}.json`).pipe(
-        map(data => ({ file, data })),
+        map(data => {
+          console.log(`✓ Loaded ${file}.json for ${lang}`);
+          return { file, data };
+        }),
         catchError((error) => {
-          console.warn(`Failed to load translation file: ${file}.json for language: ${lang}`, error);
-          console.warn(`Attempted path: assets/i18n/${lang}/${file}.json`);
+          console.error(`✗ Failed to load translation file: ${file}.json for language: ${lang}`);
+          console.error(`  Attempted path: assets/i18n/${lang}/${file}.json`);
+          console.error(`  Error:`, error);
           return of({ file, data: {} });
         })
       ).toPromise()
@@ -91,7 +96,7 @@ export class I18nService {
 
   /**
    * Get translation by key
-   * Supports nested keys like 'nav.home' or 'hero.title'
+   * Supports nested keys like 'nav.home', 'hero.title', or 'home.team.title'
    */
   translate(key: string, params?: { [key: string]: string }): string {
     const lang = this.currentLanguage();
@@ -101,10 +106,11 @@ export class I18nService {
       return key;
     }
     
-    const [namespace, ...keyParts] = key.split('.');
+    const keyParts = key.split('.');
+    const translationFiles = ['common', 'home', 'about', 'sectors', 'clients', 'team', 'contact'];
     
     // Special handling for nav.* keys - always check common.json first
-    if (namespace === 'nav') {
+    if (keyParts[0] === 'nav') {
       const common = this.translations.get(`${lang}.common`);
       if (common) {
         const value = this.getNestedValue(common, key);
@@ -114,26 +120,38 @@ export class I18nService {
       }
     }
     
-    // Try to find translation in namespace files
-    const translationFiles = ['common', 'home', 'about', 'sectors', 'clients', 'team', 'contact'];
-    
-    // First, try to find in the namespace file (if namespace matches a file)
+    // Strategy 1: Try namespace file first (e.g., 'home.team.title' -> look in home.json for 'team.title')
+    const [namespace, ...restParts] = keyParts;
     if (translationFiles.includes(namespace)) {
       const translation = this.translations.get(`${lang}.${namespace}`);
       if (translation) {
-        const value = this.getNestedValue(translation, keyParts.join('.'));
+        const value = this.getNestedValue(translation, restParts.join('.'));
         if (value && typeof value === 'string') {
           return this.interpolate(value, params);
         }
       }
     }
     
-    // Fallback: search in all files (but skip if we already checked common for nav keys)
-    if (namespace !== 'nav') {
+    // Strategy 2: Search in all files with the full key path
+    // This handles cases like 'home.team.title' where team might be in team.json
+    for (const file of translationFiles) {
+      const translation = this.translations.get(`${lang}.${file}`);
+      if (translation) {
+        const value = this.getNestedValue(translation, key);
+        if (value && typeof value === 'string') {
+          return this.interpolate(value, params);
+        }
+      }
+    }
+    
+    // Strategy 3: Try without namespace prefix (e.g., 'home.team.title' -> 'team.title')
+    // This handles cases where the key structure doesn't match file structure
+    if (keyParts.length > 1) {
+      const withoutNamespace = keyParts.slice(1).join('.');
       for (const file of translationFiles) {
         const translation = this.translations.get(`${lang}.${file}`);
         if (translation) {
-          const value = this.getNestedValue(translation, keyParts.join('.'));
+          const value = this.getNestedValue(translation, withoutNamespace);
           if (value && typeof value === 'string') {
             return this.interpolate(value, params);
           }
@@ -141,7 +159,7 @@ export class I18nService {
       }
     }
 
-    // Final fallback: try direct key lookup in common
+    // Strategy 4: Try direct key lookup in common as final fallback
     const common = this.translations.get(`${lang}.common`);
     if (common) {
       const value = this.getNestedValue(common, key);
