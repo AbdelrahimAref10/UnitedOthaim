@@ -51,11 +51,14 @@ export class I18nService {
   loadLanguage(lang: Language): Observable<void> {
     const translationFiles = ['common', 'home', 'about', 'sectors', 'clients', 'team', 'contact'];
     
+    // Use relative path (without leading slash) so it respects base href
+    // This works both locally (base href="/") and on GitHub Pages (base href="/UnitedOthaim/")
     const loadPromises = translationFiles.map(file => 
-      this.http.get<TranslationData>(`/assets/i18n/${lang}/${file}.json`).pipe(
+      this.http.get<TranslationData>(`assets/i18n/${lang}/${file}.json`).pipe(
         map(data => ({ file, data })),
-        catchError(() => {
-          console.warn(`Failed to load translation file: ${file}.json for language: ${lang}`);
+        catchError((error) => {
+          console.warn(`Failed to load translation file: ${file}.json for language: ${lang}`, error);
+          console.warn(`Attempted path: assets/i18n/${lang}/${file}.json`);
           return of({ file, data: {} });
         })
       ).toPromise()
