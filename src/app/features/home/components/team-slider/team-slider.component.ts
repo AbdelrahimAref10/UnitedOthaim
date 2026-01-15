@@ -15,31 +15,23 @@ import { TeamMember } from '../../../../core/models/team-member.model';
 export class TeamSliderComponent {
   i18nService = inject(I18nService);
   members: TeamMember[] = [
-    {
-      id: '1',
-      name: 'A. Omar bin Abdulkarim Al-Othaim',
-      nameAr: 'أ. عمر بن عبد الكريم العثيم',
-      position: 'Member of the Board of Directors',
-      positionAr: 'عضو لجنة المديرين',
-      image: 'assets/images/team/1.avif',
-      isBoardMember: false
-    },
+
     {
       id: '2',
       name: 'Dr. Abdullah bin Abdulkarim Al-Othaim',
       nameAr: 'د. عبد الله بن عبد الكريم العثيم',
       position: 'chief executive officer',
       positionAr: 'الرئيس التنفيذي',
-      image: 'assets/images/team/2.avif',
+      image: 'assets/images/team/3.avif',
       isBoardMember: false
     },
     {
       id: '3',
-      name: 'a. Muhammad bin Ahmed Al-Othaim',
+      name: 'A. Muhammad bin Ahmed Al-Othaim',
       nameAr: 'أ. محمد بن عبد الله العثيم',
       position: 'General Director',
       positionAr: 'المدير العام',
-      image: 'assets/images/team/3.avif',
+      image: 'assets/images/team/2.avif',
       isBoardMember: false
     },
 

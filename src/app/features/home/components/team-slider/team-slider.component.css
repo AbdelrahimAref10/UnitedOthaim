@@ -27,7 +27,7 @@
 }
 
 .team-slider_cards {
-  @apply flex flex-wrap justify-between gap-6;
+  @apply flex flex-wrap justify-center gap-8;
 }
 
 .team-slider_card {
