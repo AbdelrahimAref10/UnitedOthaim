@@ -87,8 +87,20 @@
 
 .sector-detail-projects_card {
   @apply bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300;
+  border: 1px solid rgba(229, 231, 235, 0.5);
 }
 
+.dark .sector-detail-projects_card {
+  border-color: rgba(55, 65, 81, 0.5);
+}
+
+.sector-detail-projects_card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(13, 148, 136, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(13, 148, 136, 0.15);
+}
+
+/* Image design for non-elevator sectors */
 .sector-detail-projects_card-image-wrapper {
   @apply relative overflow-hidden;
   aspect-ratio: 16 / 9;
@@ -111,15 +123,172 @@
 }
 
 .sector-detail-projects_card-content {
-  @apply p-6;
+  @apply p-6 md:p-8;
+}
+
+/* Modern logo card design for elevator sector - Premium Design */
+.sector-detail-projects_card-elevator {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.dark .sector-detail-projects_card-elevator {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-color: rgba(55, 65, 81, 0.8);
+}
+
+.sector-detail-projects_card-elevator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d9488, #14b8a6, #0d9488);
+  background-size: 200% 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.sector-detail-projects_card-elevator:hover::before {
+  transform: scaleX(1);
+  animation: shimmer 2s ease infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.sector-detail-projects_card-elevator:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.25);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+.sector-detail-projects_card-elevator-content {
+  @apply flex flex-col;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.sector-detail-projects_card-logo-wrapper {
+  @apply flex items-center justify-center relative;
+  width: 100%;
+  height: 180px;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sector-detail-projects_card-logo-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.sector-detail-projects_card-elevator:hover .sector-detail-projects_card-logo-wrapper::after {
+  opacity: 1;
+}
+
+.dark .sector-detail-projects_card-logo-wrapper {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.sector-detail-projects_card-elevator:hover .sector-detail-projects_card-logo-wrapper {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+}
+
+.dark .sector-detail-projects_card-elevator:hover .sector-detail-projects_card-logo-wrapper {
+  background: linear-gradient(135deg, #134e4a 0%, #0f766e 100%);
+}
+
+.sector-detail-projects_card-logo-container {
+  @apply flex items-center justify-center relative z-10;
+  width: 100%;
+  height: 100%;
+}
+
+.sector-detail-projects_card-logo {
+  @apply max-w-full max-h-full object-contain transition-all duration-500;
+  max-width: 160px;
+  max-height: 120px;
+  filter: grayscale(20%) brightness(0.95);
+  opacity: 0.9;
+}
+
+.sector-detail-projects_card-elevator:hover .sector-detail-projects_card-logo {
+  transform: scale(1.15) translateY(-5px);
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+.sector-detail-projects_card-elevator-text {
+  @apply flex flex-col gap-3;
+  padding: 0;
+}
+
+.sector-detail-projects_card-elevator .sector-detail-projects_card-title {
+  @apply mb-0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.sector-detail-projects_card-elevator .sector-detail-projects_card-description {
+  @apply mb-0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.dark .sector-detail-projects_card-elevator .sector-detail-projects_card-description {
+  color: #9ca3af;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sector-detail-projects_card-elevator-content {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+  
+  .sector-detail-projects_card-logo-wrapper {
+    height: 150px;
+    padding: 1.5rem;
+  }
+  
+  .sector-detail-projects_card-logo {
+    max-width: 130px;
+    max-height: 100px;
+  }
+  
+  .sector-detail-projects_card-elevator:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
 }
 
 .sector-detail-projects_card-title {
-  @apply text-2xl font-bold text-gray-900 dark:text-white mb-3;
+  @apply text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .sector-detail-projects_card-description {
-  @apply text-gray-600 dark:text-gray-300 leading-relaxed;
+  @apply text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
+  line-height: 1.7;
 }
 
 /* 3. Clients Section (Sector-specific) */
@@ -195,6 +364,14 @@
   @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start;
 }
 
+.sector-detail-services_content-no-images {
+  @apply grid-cols-1;
+}
+
+.sector-detail-services_content-no-images .sector-detail-services_text {
+  @apply max-w-4xl mx-auto;
+}
+
 .sector-detail-services_content-rtl {
   direction: rtl;
 }
@@ -234,6 +411,10 @@
 /* Content on Right */
 .sector-detail-services_text {
   @apply space-y-8;
+}
+
+.sector-detail-services_text-full-width {
+  @apply w-full;
 }
 
 .sector-detail-services_description {
@@ -302,7 +483,7 @@
 }
 
 .sector-detail-unique_card-title {
-  @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
+  @apply text-lg font-bold text-gray-900 dark:text-white mb-4;
 }
 
 .sector-detail-unique_card-description {
@@ -351,10 +532,53 @@
     @apply grid-cols-1;
   }
 
+  .sector-detail-projects_card-content {
+    @apply p-5;
+  }
+
+  .sector-detail-projects_card-title {
+    @apply text-xl mb-3;
+  }
+
+  .sector-detail-projects_card-description {
+    @apply text-base;
+  }
+
+  .sector-detail-projects_card:hover {
+    transform: translateY(-4px);
+  }
+
   .sector-detail-unique_grid {
     @apply grid-cols-1;
   }
 
+  .sector-detail-projects_card-elevator-content {
+    flex-direction: column;
+  }
+  
+  .sector-detail-projects_card-elevator-text {
+    @apply p-5;
+  }
+  
+  .sector-detail-projects_card-logo-wrapper {
+    min-height: 150px;
+    padding: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+    border-left: none;
+  }
+  
+  .dark .sector-detail-projects_card-logo-wrapper {
+    border-top-color: #374151;
+  }
+
+  .sector-detail-projects_card-logo {
+    max-width: 120px;
+    max-height: 90px;
+  }
+  
+  .sector-detail-projects_card-elevator:hover {
+    transform: translateY(-6px);
+  }
 }
 
 @media (max-width: 768px) {

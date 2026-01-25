@@ -5,6 +5,14 @@
   overflow: hidden;
 }
 
+:host-context(.dark) .stats-section,
+:host-context(html.dark) .stats-section,
+html.dark .stats-section,
+.dark .stats-section {
+  background: #0f172a !important;
+  background-color: #0f172a !important;
+}
+
 .stats-section_container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
 }
@@ -29,6 +37,10 @@
   @apply text-3xl md:text-4xl lg:text-5xl font-bold;
   color: #1e293b;
   line-height: 1.2;
+}
+
+.dark .stats-section_title {
+  color: #ffffff;
 }
 
 .stats-section_grid {
@@ -82,6 +94,10 @@
   color: #64748b;
   transition: color 0.3s ease;
   line-height: 1.5;
+}
+
+.dark .stats-section_stat-label {
+  color: #d1d5db;
 }
 
 .stats-section_stat:hover .stats-section_stat-label {

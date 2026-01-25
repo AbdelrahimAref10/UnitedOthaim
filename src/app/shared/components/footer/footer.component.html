@@ -7,23 +7,6 @@
       </div>
 
       <div class="footer_section">
-        <h4 class="footer_subtitle">{{ 'footer.signUp.title' | translate }}</h4>
-        <p class="footer_subtitle-description">{{ 'footer.signUp.description' | translate }}</p>
-        <form class="footer_newsletter" (ngSubmit)="onNewsletterSubmit($event)">
-          <input 
-            type="email" 
-            class="footer_newsletter-input"
-            [placeholder]="'footer.signUp.placeholder' | translate"
-            required
-          />
-          <button type="submit" class="footer_newsletter-button">
-            {{ 'footer.signUp.submit' | translate }}
-          </button>
-        </form>
-        <p class="footer_newsletter-note">{{ 'footer.signUp.note' | translate }}</p>
-      </div>
-
-      <div class="footer_section">
         <h4 class="footer_subtitle">{{ 'footer.recentNews' | translate }}</h4>
         <ul class="footer_news">
           <li *ngFor="let news of recentNews" class="footer_news-item">

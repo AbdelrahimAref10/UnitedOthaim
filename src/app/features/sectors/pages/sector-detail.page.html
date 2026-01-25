@@ -39,9 +39,9 @@
           {{ 'sectors.services.subtitle' | translate }}
         </p>
       </div>
-      <div class="sector-detail-services_content" [class.sector-detail-services_content-rtl]="i18nService.getCurrentLanguage() === 'ar'">
+      <div class="sector-detail-services_content" [class.sector-detail-services_content-rtl]="i18nService.getCurrentLanguage() === 'ar'" [class.sector-detail-services_content-no-images]="sector?.id === 'elevator'">
         <!-- Images on Left (3 images like about section) -->
-        <div class="sector-detail-services_images">
+        <div class="sector-detail-services_images" *ngIf="sector?.id !== 'elevator'">
           <div 
             *ngFor="let image of serviceImages; let i = index" 
             class="sector-detail-services_image-wrapper"
@@ -57,7 +57,7 @@
           </div>
         </div>
         <!-- Content on Right -->
-        <div class="sector-detail-services_text">
+        <div class="sector-detail-services_text" [class.sector-detail-services_text-full-width]="sector?.id === 'elevator'">
           <p class="sector-detail-services_description">
             {{ i18nService.getCurrentLanguage() === 'ar' ? serviceContentAr : serviceContent }}
           </p>
@@ -83,7 +83,7 @@
   </section>
 
   <!-- 3. Projects Section -->
-  <section class="sector-detail-projects">
+  <section class="sector-detail-projects" *ngIf="projects && projects.length > 0">
     <div class="sector-detail-projects_container">
       <div class="sector-detail-projects_header">
         <h2 class="sector-detail-projects_title">
@@ -93,27 +93,53 @@
           {{ 'sectors.projects.subtitle' | translate }}
         </p>
       </div>
-      <div class="sector-detail-projects_grid">
+      <div class="sector-detail-projects_grid" [class.sector-detail-projects_grid-elevator]="sector?.id === 'elevator'">
         <div 
           *ngFor="let project of projects" 
           class="sector-detail-projects_card"
+          [class.sector-detail-projects_card-elevator]="sector?.id === 'elevator'"
         >
-          <div class="sector-detail-projects_card-image-wrapper">
-            <img 
-              [src]="project.image" 
-              [alt]="i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title"
-              class="sector-detail-projects_card-image"
-              loading="lazy"
-            />
-            <div class="sector-detail-projects_card-overlay"></div>
+          <!-- Logo design for elevator sector -->
+          <div *ngIf="sector?.id === 'elevator'" class="sector-detail-projects_card-elevator-content">
+            <div class="sector-detail-projects_card-logo-wrapper">
+              <div class="sector-detail-projects_card-logo-container">
+                <img 
+                  [src]="project.image" 
+                  [alt]="i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title"
+                  class="sector-detail-projects_card-logo"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="sector-detail-projects_card-elevator-text">
+              <h3 class="sector-detail-projects_card-title">
+                {{ i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title }}
+              </h3>
+              <p class="sector-detail-projects_card-description">
+                {{ i18nService.getCurrentLanguage() === 'ar' ? project.descriptionAr : project.description }}
+              </p>
+            </div>
           </div>
-          <div class="sector-detail-projects_card-content">
-            <h3 class="sector-detail-projects_card-title">
-              {{ i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title }}
-            </h3>
-            <p class="sector-detail-projects_card-description">
-              {{ i18nService.getCurrentLanguage() === 'ar' ? project.descriptionAr : project.description }}
-            </p>
+          
+          <!-- Image design for other sectors -->
+          <div *ngIf="sector?.id !== 'elevator'">
+            <div class="sector-detail-projects_card-image-wrapper">
+              <img 
+                [src]="project.image" 
+                [alt]="i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title"
+                class="sector-detail-projects_card-image"
+                loading="lazy"
+              />
+              <div class="sector-detail-projects_card-overlay"></div>
+            </div>
+            <div class="sector-detail-projects_card-content">
+              <h3 class="sector-detail-projects_card-title">
+                {{ i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title }}
+              </h3>
+              <p class="sector-detail-projects_card-description">
+                {{ i18nService.getCurrentLanguage() === 'ar' ? project.descriptionAr : project.description }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
