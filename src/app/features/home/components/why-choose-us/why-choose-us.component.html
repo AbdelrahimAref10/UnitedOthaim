@@ -12,21 +12,21 @@
     <div class="why-choose-us_grid">
       <div 
         *ngFor="let feature of features; let i = index"
-        class="why-choose-us_item"
-        [style.animation-delay]="(i * 0.1) + 's'"
+        class="why-choose-us_card"
       >
-        <div class="why-choose-us_item-icon">
-          <div class="why-choose-us_icon-circle">
-            <span class="why-choose-us_icon-number">{{ i + 1 }}</span>
+        <div class="why-choose-us_card-inner">
+          <div class="why-choose-us_card-header">
+            <div class="why-choose-us_card-number">{{ formatNumber(i) }}</div>
+            <div class="why-choose-us_card-line"></div>
           </div>
-        </div>
-        <div class="why-choose-us_item-content">
-          <h3 class="why-choose-us_item-title">
-            {{ feature.titleKey | translate }}
-          </h3>
-          <p class="why-choose-us_item-description">
-            {{ feature.descriptionKey | translate }}
-          </p>
+          <div class="why-choose-us_card-content">
+            <h3 class="why-choose-us_card-title">
+              {{ feature.titleKey | translate }}
+            </h3>
+            <p class="why-choose-us_card-description">
+              {{ feature.descriptionKey | translate }}
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 .team-slider {
-  @apply py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900;
+  @apply py-12 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900;
 }
 
 .team-slider_container {
@@ -57,7 +57,7 @@
 }
 
 .team-slider_card-position {
-  @apply text-primary-light dark:text-primary-dark font-semibold;
+  @apply text-gray-900 dark:text-white font-semibold;
 }
 
 /* Responsive */

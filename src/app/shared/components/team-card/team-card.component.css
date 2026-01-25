@@ -19,7 +19,7 @@
 }
 
 .team-card_name {
-  @apply text-xl md:text-2xl font-semibold text-primary-light dark:text-primary-dark;
+  @apply text-xl md:text-2xl font-semibold text-gray-900 dark:text-white;
 }
 
 .team-card_position {

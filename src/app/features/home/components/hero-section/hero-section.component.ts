@@ -10,4 +10,12 @@ import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.css'
 })
-export class HeroSectionComponent {}
+export class HeroSectionComponent {
+  scrollToSectors(event: Event): void {
+    event.preventDefault();
+    const sectorsSection = document.getElementById('sectors');
+    if (sectorsSection) {
+      sectorsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}

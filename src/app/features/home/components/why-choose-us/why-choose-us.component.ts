@@ -33,4 +33,8 @@ export class WhyChooseUsComponent {
       descriptionKey: 'home.whyChooseUs.feature4.description'
     }
   ];
+
+  formatNumber(index: number): string {
+    return String(index + 1).padStart(2, '0');
+  }
 }

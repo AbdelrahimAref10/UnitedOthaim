@@ -7,27 +7,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary brand colors - Professional Dark Charcoal/Gold (Consulting Theme Style)
+        // Primary brand colors - Teal (Professional Theme Style)
         primary: {
-          light: '#1a1a1a', // Dark charcoal for light mode - Professional, sophisticated
-          dark: '#2c2c2c',  // Lighter charcoal for dark mode
-          DEFAULT: '#1a1a1a',
-          50: '#f5f5f5',
-          100: '#e0e0e0',
-          200: '#bdbdbd',
-          300: '#9e9e9e',
-          400: '#757575',
-          500: '#616161',
-          600: '#424242',
-          700: '#1a1a1a',
-          800: '#141414',
-          900: '#0a0a0a',
+          light: '#0d9488', // Teal-600 for light mode
+          dark: '#14b8a6',   // Teal-500 for dark mode
+          DEFAULT: '#0d9488',
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
-        // Secondary accent colors - Gold/Amber (Professional consulting accent)
+        // Secondary accent colors - Teal (Professional consulting accent)
         secondary: {
-          light: '#d4af37', // Gold for light mode
-          dark: '#f4a460',  // Lighter gold/amber for dark mode
-          DEFAULT: '#d4af37',
+          light: '#0d9488', // Teal-600 for light mode
+          dark: '#14b8a6',  // Teal-500 for dark mode
+          DEFAULT: '#0d9488',
         },
         // Background colors
         background: {
@@ -59,22 +59,22 @@ module.exports = {
           dark: '#f87171',
           DEFAULT: '#dc2626',
         },
-        // Button colors - Professional Dark/Gold (Consulting Theme Style)
-        button: {
-          primary: {
-            light: '#1a1a1a',
-            dark: '#2c2c2c',
-            DEFAULT: '#1a1a1a',
-          },
+          // Button colors - Teal (Professional Theme Style)
+          button: {
+            primary: {
+              light: '#0d9488',
+              dark: '#14b8a6',
+              DEFAULT: '#0d9488',
+            },
           secondary: {
             light: '#64748b',
             dark: '#94a3b8',
             DEFAULT: '#64748b',
           },
           accent: {
-            light: '#d4af37',
-            dark: '#f4a460',
-            DEFAULT: '#d4af37',
+            light: '#0d9488',
+            dark: '#14b8a6',
+            DEFAULT: '#0d9488',
           },
         },
         // Card colors

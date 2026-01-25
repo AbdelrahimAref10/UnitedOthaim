@@ -25,7 +25,18 @@
               {{ slide.descriptionKey | translate }}
             </p>
             <div class="hero-slider_actions">
-              <a [routerLink]="slide.ctaLink" class="btn btn-primary hero-slider_cta">
+              <a 
+                *ngIf="slide.ctaLink !== '/sectors'"
+                [routerLink]="slide.ctaLink" 
+                class="btn btn-primary hero-slider_cta"
+              >
+                {{ slide.ctaKey | translate }}
+              </a>
+              <a 
+                *ngIf="slide.ctaLink === '/sectors'"
+                (click)="scrollToSectors($event)" 
+                class="btn btn-primary hero-slider_cta"
+              >
                 {{ slide.ctaKey | translate }}
               </a>
             </div>

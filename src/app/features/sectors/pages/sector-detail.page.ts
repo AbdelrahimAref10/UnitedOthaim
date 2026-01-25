@@ -33,6 +33,9 @@ export class SectorDetailPage implements OnInit, OnDestroy {
   private animationFrame?: number;
 
   ngOnInit(): void {
+    // Scroll to top when navigating to sector detail page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.sectorsService.getAllSectors().subscribe(sectors => {

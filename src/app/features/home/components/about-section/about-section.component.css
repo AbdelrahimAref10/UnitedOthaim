@@ -1,5 +1,5 @@
 .about-section {
-  @apply py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800;
+  @apply py-12 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800;
 }
 
 .about-section_container {

@@ -30,6 +30,11 @@ export class App implements OnInit {
           setTimeout(() => {
             this.smoothScrollService.scrollToElement(fragment);
           }, 100);
+        } else {
+          // Scroll to top for route changes without fragments (e.g., sector detail pages)
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 100);
         }
       });
     this.currentUrl = this.router.url.split('#')[0];

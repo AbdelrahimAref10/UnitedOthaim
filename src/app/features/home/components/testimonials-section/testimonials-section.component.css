@@ -1,5 +1,5 @@
 .testimonials-section {
-  @apply py-16 bg-white dark:bg-gray-900;
+  @apply py-12 bg-white dark:bg-gray-900;
 }
 
 .testimonials-section_container {

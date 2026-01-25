@@ -20,13 +20,33 @@ export class ServicesSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.sectorsService.getAllSectors().subscribe(sectors => {
-      // Filter to show only the 4 specified sectors
+      // Filter to show only the 4 specified sectors and order them
       const allowedSectorIds = ['elevator', 'contracting', 'next-consulting', 'investments'];
-      this.services = sectors.filter(sector => allowedSectorIds.includes(sector.id));
+      const filtered = sectors.filter(sector => allowedSectorIds.includes(sector.id));
+      
+      // Order: Contracting (01), Elevator (02), Investments (03), Next Consulting (04)
+      const orderMap: { [key: string]: number } = {
+        'contracting': 1,
+        'elevator': 2,
+        'investments': 3,
+        'next-consulting': 4
+      };
+      
+      this.services = filtered.sort((a, b) => (orderMap[a.id] || 0) - (orderMap[b.id] || 0));
     });
   }
 
   getServiceImage(image: string): string {
     return `assets/images/services/${image}`;
+  }
+
+  getSectorBadgeNumber(sectorId: string): string {
+    const badgeMap: { [key: string]: string } = {
+      'contracting': '01',
+      'elevator': '02',
+      'investments': '03',
+      'next-consulting': '04'
+    };
+    return badgeMap[sectorId] || '00';
   }
 }

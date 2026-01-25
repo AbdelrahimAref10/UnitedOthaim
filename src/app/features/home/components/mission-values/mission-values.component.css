@@ -1,5 +1,5 @@
 .mission-values {
-  @apply py-16 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  @apply py-12 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
   position: relative;
   overflow: hidden;
 }
@@ -158,7 +158,7 @@
 
 .mission-values_history-title {
   @apply text-4xl md:text-5xl lg:text-6xl font-bold;
-  @apply text-primary-light dark:text-primary-dark;
+  @apply text-gray-900 dark:text-white;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
@@ -374,7 +374,7 @@
 }
 
 .mission-values_values-title {
-  @apply text-4xl md:text-5xl font-bold text-primary-light dark:text-primary-dark mb-4;
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -408,7 +408,7 @@
 }
 
 .mission-values_value-title {
-  @apply text-xl font-bold text-primary-light dark:text-primary-dark mb-3;
+  @apply text-xl font-bold text-gray-900 dark:text-white mb-3;
   font-weight: 700;
 }
 

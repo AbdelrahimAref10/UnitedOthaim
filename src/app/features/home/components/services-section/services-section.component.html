@@ -1,4 +1,4 @@
-<section class="services-section">
+<section id="sectors" class="services-section">
   <div class="services-section_container">
     <div class="services-section_header">
       <div class="services-section_badge">
@@ -11,36 +11,43 @@
 
     <div class="services-section_grid">
       <div 
-        *ngFor="let service of services"
-        class="services-section_card group"
-        [routerLink]="'/sectors/' + service.route"
+        *ngFor="let service of services; let i = index"
+        class="services-section_item"
+        [class.services-section_item-left]="i % 2 === 0"
+        [class.services-section_item-right]="i % 2 === 1"
       >
-        <div class="services-section_card-image-wrapper">
+        <!-- Circular Image -->
+        <div class="services-section_item-image-wrapper">
           <img 
             [src]="getServiceImage(service.image)"
-            [alt]="service.name"
-            class="services-section_card-image"
+            [alt]="i18nService.getCurrentLanguage() === 'ar' ? service.nameAr : service.name"
+            class="services-section_item-image"
           />
-          <div class="services-section_card-overlay"></div>
         </div>
-        <div class="services-section_card-content">
-          <h3 class="services-section_card-title">
+        
+        <!-- Banner with Name -->
+        <div class="services-section_item-banner">
+          <h3 class="services-section_item-title">
             {{ i18nService.getCurrentLanguage() === 'ar' ? service.nameAr : service.name }}
           </h3>
-          <p class="services-section_card-description">
+          <p class="services-section_item-description">
             {{ i18nService.getCurrentLanguage() === 'ar' ? service.descriptionAr : service.description }}
           </p>
-          <span class="services-section_card-link">
-            {{ 'buttons.readMore' | translate }} →
-          </span>
+          <a 
+            [routerLink]="'/sectors/' + service.route"
+            class="services-section_item-link"
+            (click)="$event.stopPropagation()"
+          >
+            {{ 'home.services.viewDetails' | translate }}
+            <span class="services-section_item-arrow" [class.services-section_item-arrow-rtl]="i18nService.getCurrentLanguage() === 'ar'">→</span>
+          </a>
+        </div>
+        
+        <!-- Numbered Badge -->
+        <div class="services-section_item-badge">
+          {{ getSectorBadgeNumber(service.id) }}
         </div>
       </div>
-    </div>
-
-    <div class="services-section_footer">
-      <a routerLink="/sectors" class="btn btn-primary services-section_view-all">
-        {{ 'home.services.viewAll' | translate }}
-      </a>
     </div>
   </div>
 </section>

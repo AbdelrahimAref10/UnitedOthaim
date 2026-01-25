@@ -11,7 +11,7 @@
         {{ 'home.hero.description' | translate }}
       </p>
       <div class="hero-section_actions">
-        <a routerLink="/sectors" class="btn btn-primary">
+        <a (click)="scrollToSectors($event)" class="btn btn-primary">
           {{ 'home.hero.cta' | translate }}
         </a>
       </div>

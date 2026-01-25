@@ -37,13 +37,13 @@
   "services": {
     "title": "Our Sectors",
     "subtitle": "Sectors",
-    "viewAll": "View All Sectors"
+    "viewAll": "View All Sectors",
+    "viewDetails": "View Details"
   },
   "featuredCase": {
     "label": "Featured Case",
-    "title": "Focus on core Delivers growth for retailer trading",
-    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "readMore": "Read More"
+    "title": "Strategic Contracting Excellence",
+    "description": "Our contracting division successfully delivered a landmark commercial complex project, completing 45,000 square meters of premium office and retail space ahead of schedule. Through innovative construction methodologies and strategic project management, we achieved 98% client satisfaction while maintaining the highest safety standards. This project showcases our commitment to excellence in large-scale infrastructure development and our ability to deliver complex projects on time and within budget."
   },
   "news": {
     "title": "Company News",
@@ -75,20 +75,20 @@
   "whyChooseUs": {
     "title": "Why choose us",
     "feature1": {
-      "title": "Sed Magni",
-      "description": "Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi."
+      "title": "Three Decades of Proven Excellence",
+      "description": "With over 30 years of industry experience, we have built a reputation for delivering exceptional results across multiple business sectors. Our track record includes hundreds of successful projects and thousands of satisfied clients throughout the Kingdom."
     },
     "feature2": {
-      "title": "Veritatis et Quasi",
-      "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni."
+      "title": "Comprehensive Multi-Sector Expertise",
+      "description": "From elevator solutions and contracting services to strategic investments and IT consulting, we offer integrated business solutions that address all your needs under one trusted partnership."
     },
     "feature3": {
-      "title": "Doloremque",
-      "description": "Sed ut perspiciatis unde omnis iste natus sit accusantium doloremque laudantium, totam rem aperiam."
+      "title": "First-Class Quality Standards",
+      "description": "Our commitment to excellence is reflected in our First-Class contracting classification and partnerships with leading international manufacturers. We maintain the highest quality standards in every project we undertake."
     },
     "feature4": {
-      "title": "Sunt in Culpa",
-      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."
+      "title": "Innovation-Driven Solutions",
+      "description": "We leverage cutting-edge technology and innovative methodologies to deliver efficient, sustainable, and cost-effective solutions. Our forward-thinking approach ensures your business stays ahead of the competition."
     }
   },
   "testimonials": {

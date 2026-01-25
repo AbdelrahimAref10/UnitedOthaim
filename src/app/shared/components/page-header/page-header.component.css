@@ -7,7 +7,7 @@
 }
 
 .page-header_title {
-  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-primary-light dark:text-primary-dark mb-4;
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4;
 }
 
 .page-header_subtitle {

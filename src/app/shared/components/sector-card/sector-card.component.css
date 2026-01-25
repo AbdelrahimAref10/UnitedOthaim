@@ -39,7 +39,7 @@
 }
 
 .sector-card_title {
-  @apply text-xl md:text-2xl font-bold text-primary-light dark:text-primary-dark mb-3;
+  @apply text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3;
   line-height: 1.3;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .sector-card_cta {
-  @apply inline-flex items-center gap-2 text-primary-light dark:text-primary-dark font-semibold text-sm uppercase tracking-wider transition-all duration-300;
+  @apply inline-flex items-center gap-2 text-gray-900 dark:text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300;
 }
 
 .sector-card:hover .sector-card_cta {

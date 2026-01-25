@@ -1,8 +1,8 @@
 /* Theme Variables for Light/Dark Mode */
 :root {
   /* Light mode colors */
-  --theme-primary: #1e40af;
-  --theme-secondary: #059669;
+  --theme-primary: #0d9488;
+  --theme-secondary: #0d9488;
   --theme-background: #ffffff;
   --theme-surface: #f8fafc;
   --theme-text: #1e293b;
@@ -15,8 +15,8 @@
 
 .dark {
   /* Dark mode colors */
-  --theme-primary: #3b82f6;
-  --theme-secondary: #10b981;
+  --theme-primary: #14b8a6;
+  --theme-secondary: #14b8a6;
   --theme-background: #0f172a;
   --theme-surface: #1e293b;
   --theme-text: #f1f5f9;

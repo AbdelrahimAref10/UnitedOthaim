@@ -10,10 +10,11 @@
     </div>
     <div class="stats-section_grid">
       <div *ngFor="let stat of stats; let i = index" class="stats-section_stat">
-        <div class="stats-section_stat-value">{{ getDisplayValue(i) }}</div>
+        <div class="stats-section_stat-number">{{ getDisplayValue(i) }}</div>
         <div class="stats-section_stat-label">
           {{ stat.key | translate }}
         </div>
+        <div class="stats-section_stat-line"></div>
       </div>
     </div>
   </div>

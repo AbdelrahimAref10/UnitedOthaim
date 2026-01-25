@@ -1,5 +1,5 @@
 .news-section {
-  @apply py-16 bg-white dark:bg-gray-900;
+  @apply py-12 bg-white dark:bg-gray-900;
 }
 
 .news-section_container {
@@ -47,7 +47,7 @@
 }
 
 .news-section_item-title {
-  @apply text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors duration-300;
+  @apply text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300;
 }
 
 .news-section_item-excerpt {
@@ -55,5 +55,5 @@
 }
 
 .news-section_item-link {
-  @apply text-primary-light dark:text-primary-dark font-semibold text-sm hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300 inline-flex items-center gap-2;
+  @apply text-gray-900 dark:text-white font-semibold text-sm hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300 inline-flex items-center gap-2;
 }

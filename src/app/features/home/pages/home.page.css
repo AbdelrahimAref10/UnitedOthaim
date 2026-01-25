@@ -6,7 +6,7 @@
 
 /* Section Styles */
 .home-section {
-  @apply py-16; 
+  @apply py-12; 
   scroll-margin-top: 80px; /* Offset for fixed header */
 }
 
@@ -27,7 +27,7 @@
 }
 
 .home-section_title {
-  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-primary-light dark:text-primary-dark;
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white;
 }
 
 .home-section_subtitle {
@@ -44,7 +44,7 @@
 }
 
 .home-section_values-title {
-  @apply text-2xl md:text-3xl font-bold text-primary-light dark:text-primary-dark mb-8 text-center;
+  @apply text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center;
 }
 
 .home-section_values-grid {
@@ -56,7 +56,7 @@
 }
 
 .home-section_value-title {
-  @apply text-xl font-semibold text-primary-light dark:text-primary-dark mb-3;
+  @apply text-xl font-semibold text-gray-900 dark:text-white mb-3;
 }
 
 .home-section_value-description {
@@ -91,7 +91,7 @@
 }
 
 .home-section_contact-info-title {
-  @apply text-2xl font-bold text-primary-light dark:text-primary-dark mb-6;
+  @apply text-2xl font-bold text-gray-900 dark:text-white mb-6;
 }
 
 .home-section_contact-info-details {
@@ -107,5 +107,5 @@
 }
 
 .home-section_contact-info-link {
-  @apply text-primary-light dark:text-primary-dark hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300;
+  @apply text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300;
 }

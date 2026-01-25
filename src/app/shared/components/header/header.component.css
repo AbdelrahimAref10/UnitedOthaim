@@ -44,20 +44,25 @@
 }
 
 .header_logo {
-  @apply text-xl md:text-2xl font-bold text-white hover:text-secondary-light transition-colors duration-300;
-  color: white !important;
+  @apply flex items-center;
+  text-decoration: none;
 }
 
-.header.header-scrolled .header_logo {
-  color: #000000 !important;
+.header_logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
 }
 
-.dark .header.header-scrolled .header_logo {
-  color: #ffffff !important;
+.header_logo:hover .header_logo-image {
+  opacity: 0.8;
 }
 
-.header_logo-text {
-  @apply font-arabic;
+@media (min-width: 768px) {
+  .header_logo-image {
+    height: 50px;
+  }
 }
 
 .header_menu-toggle {
@@ -147,11 +152,11 @@
 }
 
 .app_header-top .header_logo {
-  @apply text-primary-light dark:text-primary-dark;
+  @apply text-gray-900 dark:text-white;
 }
 
 .app_header-top .header_link {
-  @apply text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark;
+  @apply text-text-light dark:text-text-dark hover:text-gray-900 dark:hover:text-white;
 }
 
 .app_header-top .header_link-active {

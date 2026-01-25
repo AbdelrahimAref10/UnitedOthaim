@@ -65,7 +65,7 @@ export class SectorsService {
         description: 'Successfully implementing several projects',
         descriptionAr: 'تنفيذ عدة مشاريع بنجاح',
         route: 'contracting',
-        image: 'contracting.jpg'
+        image: 'contracting.png'
       },
       {
         id: 'investments',
@@ -74,7 +74,7 @@ export class SectorsService {
         description: 'Strategic investments and partnerships',
         descriptionAr: 'الاستثمارات والشراكات الاستراتيجية',
         route: 'investments',
-        image:'investments.webp'
+        image:'investment.png'
       },
       {
         id: 'next-consulting',
@@ -83,7 +83,7 @@ export class SectorsService {
         description: 'Advanced IT consulting and technology solutions',
         descriptionAr: 'حلول استشارية تقنية متقدمة',
         route: 'next-consulting',
-        image:'consulting.webp'
+        image:'consulting.png'
       },
     ];
     return of(sectors);
@@ -98,7 +98,7 @@ export class SectorsService {
   getSectorData(sectorId: string): SectorServiceData {
     const dataMap: { [key: string]: SectorServiceData } = {
       'elevator': {
-        previewImages: ['assets/images/services/elevator.png'],
+        previewImages: ['assets/images/services/elevator2.png'],
         projects: [
           {
             id: '1',
@@ -197,7 +197,7 @@ export class SectorsService {
         ]
       },
       'contracting': {
-        previewImages: ['assets/images/services/contracting.jpg'],
+        previewImages: ['assets/images/services/contracting2.jpg'],
         projects: [
           {
             id: '1',
@@ -296,7 +296,7 @@ export class SectorsService {
         ]
       },
       'next-consulting': {
-        previewImages: ['assets/images/services/consulting.webp'],
+        previewImages: ['assets/images/services/consulting2.webp'],
         projects: [
           {
             id: '1',
@@ -395,7 +395,7 @@ export class SectorsService {
         ]
       },
       'investments': {
-        previewImages: ['assets/images/services/investments.webp'],
+        previewImages: ['assets/images/services/investment.png'],
         projects: [
           {
             id: '1',

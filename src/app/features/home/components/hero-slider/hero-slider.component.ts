@@ -90,4 +90,12 @@ export class HeroSliderComponent implements OnInit {
   goToSlide(index: number): void {
     this.currentSlide.set(index);
   }
+
+  scrollToSectors(event: Event): void {
+    event.preventDefault();
+    const sectorsSection = document.getElementById('sectors');
+    if (sectorsSection) {
+      sectorsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

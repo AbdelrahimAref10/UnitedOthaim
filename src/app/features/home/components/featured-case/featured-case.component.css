@@ -1,5 +1,5 @@
 .featured-case {
-  @apply py-16 bg-gray-50 dark:bg-gray-800;
+  @apply py-12 bg-gray-50 dark:bg-gray-800;
 }
 
 .featured-case_container {
@@ -7,7 +7,7 @@
 }
 
 .featured-case_header {
-  @apply mb-12 text-center;
+  @apply mb-6 text-center;
 }
 
 .featured-case_badge {
@@ -26,10 +26,6 @@
   @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center;
 }
 
-.featured-case_content {
-  @apply max-w-4xl mx-auto;
-}
-
 .featured-case_text {
   @apply space-y-6 text-center;
 }
@@ -43,5 +39,5 @@
 }
 
 .featured-case_link {
-  @apply text-primary-light dark:text-primary-dark font-semibold hover:text-secondary-light dark:hover:text-secondary-dark transition-colors duration-300 inline-flex items-center gap-2;
+  @apply text-gray-900 dark:text-white font-semibold hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300 inline-flex items-center gap-2;
 }

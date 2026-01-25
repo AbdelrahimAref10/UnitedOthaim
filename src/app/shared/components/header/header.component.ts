@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navLinks = [
     { key: 'nav.home', route: '/', section: null },
     { key: 'nav.about', route: '/', section: 'about' },
-    { key: 'nav.sectors', route: '/sectors', section: null },
+    { key: 'nav.sectors', route: '/', section: 'sectors' },
     { key: 'nav.clients', route: '/', section: 'clients' },
     { key: 'nav.team', route: '/', section: 'team' },
     { key: 'nav.contact', route: '/', section: 'contact' }

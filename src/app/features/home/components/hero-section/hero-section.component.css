@@ -1,5 +1,5 @@
 .hero-section {
-  @apply py-16 md:py-24 bg-gradient-to-br from-primary-light/10 dark:from-primary-dark/20 to-secondary-light/10 dark:to-secondary-dark/20;
+  @apply py-12 bg-gradient-to-br from-primary-light/10 dark:from-primary-dark/20 to-secondary-light/10 dark:to-secondary-dark/20;
 }
 
 .hero-section_container {
@@ -11,7 +11,7 @@
 }
 
 .hero-section_title {
-  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-primary-light dark:text-primary-dark;
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white;
 }
 
 .hero-section_subtitle {

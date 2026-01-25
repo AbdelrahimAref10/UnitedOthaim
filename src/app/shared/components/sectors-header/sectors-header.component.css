@@ -17,21 +17,25 @@
 }
 
 .sectors-header_logo {
-  @apply text-xl md:text-2xl font-bold transition-colors duration-300;
-  color: #000000 !important;
+  @apply flex items-center;
   text-decoration: none;
 }
 
-.dark .sectors-header_logo {
-  color: #ffffff !important;
+.sectors-header_logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
 }
 
-.sectors-header_logo:hover {
-  color: var(--primary-color) !important;
+.sectors-header_logo:hover .sectors-header_logo-image {
+  opacity: 0.8;
 }
 
-.sectors-header_logo-text {
-  @apply font-arabic;
+@media (min-width: 768px) {
+  .sectors-header_logo-image {
+    height: 50px;
+  }
 }
 
 .sectors-header_menu-toggle {
