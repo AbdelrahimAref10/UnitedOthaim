@@ -6,46 +6,46 @@
   "elevator": {
     "title": "Elevator Sector",
     "description": "Established in 2006 AD in order to keep pace with the urban renaissance that took place in the Kingdom",
-    "details": "Our elevator sector provides comprehensive solutions for vertical transportation, ensuring safety, efficiency, and modern technology."
+    "preview": "Work in this sector began in 2006, with contracts signed with several government, private,and civil entities. We have extensive experience in the supply, installation, and maintenance of elevators, lifts, and escalators. We have a distinguished list of clients from both government and private sectors. In addition to our exclusive agencies, we cooperate with several leading elevator manufacturers. We also carry out maintenance and rehabilitation work for old elevators. To better serve our clients, we have added a specialized division for the supply of various spare parts."
   },
   "contracting": {
     "title": "Contracting Sector",
     "description": "Successfully implementing several projects, including residential, administrative and commercial buildings and other civil works in the public and private sectors",
-    "details": "We deliver high-quality construction projects with precision and excellence."
-  },
-  "manufacturing": {
-    "title": "Manufacturing Sector",
-    "description": "The National Materials Company (the industrial arm of Al-Othaim United Company) aims to carry out industrial and mining activities",
-    "details": "Leading industrial and manufacturing solutions with cutting-edge technology."
-  },
-  "development": {
-    "title": "Development Sector - Real Estate",
-    "description": "A multi-faceted type of business that includes activities ranging from the repair and renovation of existing buildings or leasing them",
-    "details": "Comprehensive real estate development and property management services."
+    "preview": "One of the most important sectors within Al-Othaim United Company, the company has obtained a First-Class classification and has executed a number of diverse projects with various governmental and private sectors."
   },
   "investments": {
     "title": "Investments Sector",
     "description": "In the field of private investments, we invest with partners in purchasing shares in existing companies, help companies finance their operations and expansions",
-    "details": "Strategic investments and partnerships for sustainable growth."
+    "preview": "One of our most important investment activities is real estate development, whether in developing land or existing properties. We have a proven track record of outstanding projects at the Kingdom level, and the company is one of the companies qualified as a real estate developer by the Ministry of Municipalities and Housing."
+  },
+  "next-consulting": {
+    "title": "Consulting Sector",
+    "description": "In the field of private investments, we invest with partners in purchasing shares in existing companies, help companies finance their operations and expansions",
+    "preview": "A distinguished team of programmers and business developers to provide technical software to government agencies and the private sector, specializing in Microsoft applications and other professional applications and programs."
   },
   "hotel": {
     "title": "Ajyad Hotel Services",
     "description": "Al-Othaim Hospitality is distinguished by its comprehensive experience in providing its services and investment capabilities",
-    "details": "Premium hospitality services with exceptional guest experiences."
+    "preview": "Premium hospitality services with exceptional guest experiences."
   },
-  "consulting": {
-    "title": "Next Consulting Solutions",
-    "description": "Technology in the field of communications technology, Information, suggestions and solutions",
-    "details": "Advanced IT consulting and technology solutions for modern businesses."
+
+  "preview": {
+    "title": "Sector Overview"
   },
-  "lowCurrent": {
-    "title": "Low Current Sector",
-    "description": "Projects, specialized works and modern systems",
-    "details": "Specialized low current systems and smart solutions."
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Showcasing Our Success Stories"
   },
-  "happyCheese": {
-    "title": "Happy Cheese",
-    "description": "Entertainment centers and restaurants",
-    "details": "Family entertainment and dining experiences."
+  "clients": {
+    "title": "Our Clients",
+    "subtitle": "Trusted Partners in Success"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive Solutions for Your Needs"
+  },
+  "unique": {
+    "title": "Why We Are Unique",
+    "subtitle": "What Sets Us Apart"
   }
 }

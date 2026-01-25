@@ -1,55 +1,186 @@
-<div class="sector-detail-page">
-  <!-- Hero Section with Image -->
-  <section class="sector-detail-hero" *ngIf="sector">
-    <div 
-      class="sector-detail-hero_background"
-      [style.background-image]="'url(assets/images/services/' + sector.image + ')'"
-    >
-      <div class="sector-detail-hero_overlay"></div>
-      <div class="sector-detail-hero_content">
-        <div class="sector-detail-hero_container">
-          <h1 class="sector-detail-hero_title">
-            {{ i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name }}
-          </h1>
-          <p class="sector-detail-hero_subtitle">
-            {{ i18nService.getCurrentLanguage() === 'ar' ? sector.descriptionAr : sector.description }}
+<div class="sector-detail-page" *ngIf="sector">
+  <!-- Header -->
+  <app-sectors-header></app-sectors-header>
+
+  <!-- 1. Overview Section -->
+  <section class="sector-detail-preview">
+    <div class="sector-detail-preview_container">
+      <div class="sector-detail-preview_content" [class.sector-detail-preview_content-rtl]="i18nService.getCurrentLanguage() === 'ar'">
+        <div class="sector-detail-preview_text">
+          <h2 class="sector-detail-preview_title">
+            {{ ('sectors.' + sector.id + '.title' | translate)}}
+          </h2>
+          <p class="sector-detail-preview_description">
+            {{ ('sectors.' + sector.id + '.preview' | translate)}}
+          </p>
+        </div>
+        <div class="sector-detail-preview_images">
+          <div class="sector-detail-preview_image-wrapper">
+            <img 
+              [src]="previewImages[0]" 
+              [alt]="'Preview image'"
+              class="sector-detail-preview_image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Services Section (3 images on left, content and steps on right) -->
+  <section class="sector-detail-services">
+    <div class="sector-detail-services_container">
+      <div class="sector-detail-services_header">
+        <h2 class="sector-detail-services_title">
+          {{ 'sectors.services.title' | translate }}
+        </h2>
+        <p class="sector-detail-services_subtitle">
+          {{ 'sectors.services.subtitle' | translate }}
+        </p>
+      </div>
+      <div class="sector-detail-services_content" [class.sector-detail-services_content-rtl]="i18nService.getCurrentLanguage() === 'ar'">
+        <!-- Images on Left (3 images like about section) -->
+        <div class="sector-detail-services_images">
+          <div 
+            *ngFor="let image of serviceImages; let i = index" 
+            class="sector-detail-services_image-wrapper"
+            [class.sector-detail-services_image-main]="i === 0"
+            [class.sector-detail-services_image-secondary]="i > 0"
+          >
+            <img 
+              [src]="image" 
+              [alt]="'Service image ' + (i + 1)"
+              class="sector-detail-services_image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Content on Right -->
+        <div class="sector-detail-services_text">
+          <p class="sector-detail-services_description">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? serviceContentAr : serviceContent }}
+          </p>
+          <div class="sector-detail-services_steps">
+            <div 
+              *ngFor="let step of allServiceSteps; let stepIndex = index" 
+              class="sector-detail-services_step"
+            >
+              <div class="sector-detail-services_step-number">{{ stepIndex + 1 }}</div>
+              <div class="sector-detail-services_step-content">
+                <h4 class="sector-detail-services_step-title">
+                  {{ i18nService.getCurrentLanguage() === 'ar' ? step.titleAr : step.title }}
+                </h4>
+                <p class="sector-detail-services_step-description">
+                  {{ i18nService.getCurrentLanguage() === 'ar' ? step.descriptionAr : step.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Projects Section -->
+  <section class="sector-detail-projects">
+    <div class="sector-detail-projects_container">
+      <div class="sector-detail-projects_header">
+        <h2 class="sector-detail-projects_title">
+          {{ 'sectors.projects.title' | translate }}
+        </h2>
+        <p class="sector-detail-projects_subtitle">
+          {{ 'sectors.projects.subtitle' | translate }}
+        </p>
+      </div>
+      <div class="sector-detail-projects_grid">
+        <div 
+          *ngFor="let project of projects" 
+          class="sector-detail-projects_card"
+        >
+          <div class="sector-detail-projects_card-image-wrapper">
+            <img 
+              [src]="project.image" 
+              [alt]="i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title"
+              class="sector-detail-projects_card-image"
+              loading="lazy"
+            />
+            <div class="sector-detail-projects_card-overlay"></div>
+          </div>
+          <div class="sector-detail-projects_card-content">
+            <h3 class="sector-detail-projects_card-title">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? project.titleAr : project.title }}
+            </h3>
+            <p class="sector-detail-projects_card-description">
+              {{ i18nService.getCurrentLanguage() === 'ar' ? project.descriptionAr : project.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why We Are Unique Section -->
+  <section class="sector-detail-unique">
+    <div class="sector-detail-unique_container">
+      <div class="sector-detail-unique_header">
+        <h2 class="sector-detail-unique_title">
+          {{ 'sectors.unique.title' | translate }}
+        </h2>
+        <p class="sector-detail-unique_subtitle">
+          {{ 'sectors.unique.subtitle' | translate }}
+        </p>
+      </div>
+      <div class="sector-detail-unique_grid">
+        <div 
+          *ngFor="let feature of uniqueFeatures" 
+          class="sector-detail-unique_card"
+        >
+          <div class="sector-detail-unique_card-icon">{{ feature.icon }}</div>
+          <h3 class="sector-detail-unique_card-title">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? feature.titleAr : feature.title }}
+          </h3>
+          <p class="sector-detail-unique_card-description">
+            {{ i18nService.getCurrentLanguage() === 'ar' ? feature.descriptionAr : feature.description }}
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <div class="sector-detail-page_content section" *ngIf="sector">
-    <div class="sector-detail-page_container">
-      <div class="sector-detail-page_wrapper">
-        <!-- Image Section -->
-        <div class="sector-detail-page_image-section">
-          <div class="sector-detail-page_image-wrapper">
+  <!-- 5. Clients Section (Sector-specific) -->
+  <section class="sector-detail-clients">
+    <div class="sector-detail-clients_container">
+      <div class="sector-detail-clients_header">
+        <h2 class="sector-detail-clients_title">
+          {{ 'sectors.clients.title' | translate }}
+        </h2>
+        <p class="sector-detail-clients_subtitle">
+          {{ 'sectors.clients.subtitle' | translate }}
+        </p>
+      </div>
+      <div 
+        class="sector-detail-clients_wrapper"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+      >
+        <div 
+          class="sector-detail-clients_logos"
+          [class.sector-detail-clients_paused]="isPaused()"
+          [style.transform]="'translateX(-' + scrollPosition() + 'px)'"
+        >
+          <div 
+            *ngFor="let client of sectorClients"
+            class="sector-detail-clients_logo-wrapper"
+          >
             <img 
-              [src]="'assets/images/services/' + sector.image"
-              [alt]="i18nService.getCurrentLanguage() === 'ar' ? sector.nameAr : sector.name"
-              class="sector-detail-page_image"
+              [src]="client.logo"
+              [alt]="'Client ' + client.id"
+              class="sector-detail-clients_logo"
             />
-          </div>
-        </div>
-
-        <!-- Details Section -->
-        <div class="sector-detail-page_details">
-          <div class="sector-detail-page_content-box">
-            <h2 class="sector-detail-page_section-title">
-              {{ 'sectors.about' | translate }}
-            </h2>
-            <div class="sector-detail-page_text">
-              <p>
-                {{ i18nService.getCurrentLanguage() === 'ar' 
-                  ? ('sectors.' + sector.id + '.details' | translate)
-                  : ('sectors.' + sector.id + '.details' | translate) }}
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>

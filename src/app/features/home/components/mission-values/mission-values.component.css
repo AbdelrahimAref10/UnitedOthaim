@@ -109,38 +109,259 @@
   transform: scaleX(1);
 }
 
-/* Company History */
+/* Company History - Modern Design */
 .mission-values_history {
   @apply mb-24;
 }
 
-.mission-values_history-wrapper {
-  @apply bg-gradient-to-r from-primary-light/5 via-secondary-light/5 to-primary-light/5 dark:from-primary-dark/10 dark:via-secondary-dark/10 dark:to-primary-dark/10 rounded-2xl p-8 md:p-12 border border-gray-200 dark:border-gray-700;
+.mission-values_history-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+.mission-values_history-layout {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center;
+}
+
+.mission-values_history-layout-rtl {
+  direction: rtl;
+}
+
+.mission-values_history-layout-rtl .mission-values_history-content {
+  order: 2;
+}
+
+.mission-values_history-layout-rtl .mission-values_history-gallery {
+  order: 1;
+}
+
+/* Content Section */
 .mission-values_history-content {
-  @apply flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8;
+  @apply relative;
+  order: 1;
 }
 
-.mission-values_history-icon {
-  @apply flex-shrink-0 w-16 h-16 rounded-full bg-secondary-light/10 dark:bg-secondary-dark/20 flex items-center justify-center text-secondary-light dark:text-secondary-dark;
+.mission-values_history-content-wrapper {
+  @apply space-y-6;
 }
 
-.mission-values_history-icon svg {
-  @apply w-8 h-8;
+.mission-values_history-label {
+  @apply inline-block mb-4;
 }
 
-.mission-values_history-text {
-  @apply flex-1;
+.mission-values_history-label-text {
+  @apply px-4 py-2 text-xs font-bold uppercase tracking-widest;
+  @apply text-secondary-light dark:text-secondary-dark;
+  @apply bg-secondary-light/10 dark:bg-secondary-dark/10;
+  @apply rounded-full;
+  letter-spacing: 0.15em;
 }
 
 .mission-values_history-title {
-  @apply text-2xl md:text-3xl font-bold text-primary-light dark:text-primary-dark mb-4;
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  @apply text-primary-light dark:text-primary-dark;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
 }
 
 .mission-values_history-description {
-  @apply text-lg text-text-light dark:text-text-dark opacity-80 leading-relaxed;
+  @apply text-lg md:text-xl;
+  @apply text-text-light dark:text-text-dark;
+  opacity: 0.75;
   line-height: 1.8;
+  font-weight: 300;
+}
+
+.dark .mission-values_history-description {
+  opacity: 0.85;
+}
+
+/* Gallery Section */
+.mission-values_history-gallery {
+  @apply relative;
+  order: 2;
+}
+
+.mission-values_history-gallery-grid {
+  @apply grid gap-4;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  min-height: 500px;
+  align-items: stretch;
+}
+
+.mission-values_history-gallery-item {
+  @apply relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  animation: fadeInUp 0.6s ease-out both;
+  display: flex;
+}
+
+/* First Image - Left side, full height (equals sum of 2nd + 3rd) */
+.mission-values_history-gallery-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  height: 100%;
+}
+
+/* Second Image - Right side, top */
+.mission-values_history-gallery-item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  aspect-ratio: 1;
+}
+
+/* Third Image - Right side, bottom */
+.mission-values_history-gallery-item:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  aspect-ratio: 1;
+}
+
+.mission-values_history-gallery-image-wrapper {
+  @apply relative w-full h-full;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.mission-values_history-gallery-image-wrapper:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.dark .mission-values_history-gallery-image-wrapper {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.dark .mission-values_history-gallery-image-wrapper:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.mission-values_history-gallery-image {
+  @apply w-full h-full object-cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.mission-values_history-gallery-image-wrapper:hover .mission-values_history-gallery-image {
+  transform: scale(1.15);
+}
+
+.mission-values_history-gallery-overlay {
+  @apply absolute inset-0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+}
+
+.mission-values_history-gallery-image-wrapper:hover .mission-values_history-gallery-overlay {
+  opacity: 1;
+}
+
+.mission-values_history-gallery-icon {
+  @apply w-12 h-12;
+  @apply text-white;
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mission-values_history-gallery-image-wrapper:hover .mission-values_history-gallery-icon {
+  transform: scale(1);
+}
+
+.mission-values_history-gallery-icon svg {
+  @apply w-full h-full;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mission-values_history-layout {
+    @apply gap-10;
+  }
+  
+  .mission-values_history-gallery-grid {
+    @apply gap-3;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-values_history-layout {
+    @apply gap-8;
+  }
+  
+  .mission-values_history-title {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  .mission-values_history-description {
+    @apply text-base md:text-lg;
+  }
+  
+  .mission-values_history-gallery-grid {
+    @apply grid-cols-1 gap-3;
+    grid-template-rows: auto;
+    min-height: auto;
+  }
+  
+  .mission-values_history-gallery-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .mission-values_history-gallery-item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .mission-values_history-gallery-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .mission-values_history-gallery-grid {
+    @apply gap-2;
+  }
+  
+  .mission-values_history-gallery-item {
+    border-radius: 1rem;
+  }
+  
+  .mission-values_history-gallery-image-wrapper {
+    border-radius: 1rem;
+  }
+  
+  .mission-values_history-gallery-overlay {
+    border-radius: 1rem;
+  }
 }
 
 /* Values Section */

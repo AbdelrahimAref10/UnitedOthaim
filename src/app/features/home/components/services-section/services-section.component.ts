@@ -20,7 +20,9 @@ export class ServicesSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.sectorsService.getAllSectors().subscribe(sectors => {
-      this.services = sectors.slice(0, 6); // Show first 6 services
+      // Filter to show only the 4 specified sectors
+      const allowedSectorIds = ['elevator', 'contracting', 'next-consulting', 'investments'];
+      this.services = sectors.filter(sector => allowedSectorIds.includes(sector.id));
     });
   }
 

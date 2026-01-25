@@ -13,85 +13,51 @@
       </p>
       <div class="mission-values_divider"></div>
     </div>
-
-    <!-- Mission & Values Cards -->
-    <div class="mission-values_content">
-      <div class="mission-values_card mission-values_card-mission">
-        <div class="mission-values_card-header">
-          <div class="mission-values_card-icon-wrapper">
-            <div class="mission-values_card-icon">🎯</div>
-          </div>
-          <div class="mission-values_card-number">01</div>
-        </div>
-        <h3 class="mission-values_card-title">
-          {{ mission.titleKey | translate }}
-        </h3>
-        <p class="mission-values_card-description">
-          {{ mission.descriptionKey | translate }}
-        </p>
-        <div class="mission-values_card-accent"></div>
-      </div>
-
-      <div class="mission-values_card mission-values_card-values">
-        <div class="mission-values_card-header">
-          <div class="mission-values_card-icon-wrapper">
-            <div class="mission-values_card-icon">💎</div>
-          </div>
-          <div class="mission-values_card-number">02</div>
-        </div>
-        <h3 class="mission-values_card-title">
-          {{ values.titleKey | translate }}
-        </h3>
-        <p class="mission-values_card-description">
-          {{ values.descriptionKey | translate }}
-        </p>
-        <div class="mission-values_card-accent"></div>
-      </div>
-    </div>
-
     <!-- Company History -->
     <div class="mission-values_history">
-      <div class="mission-values_history-wrapper">
-        <div class="mission-values_history-content">
-          <div class="mission-values_history-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+      <div class="mission-values_history-container">
+        <div class="mission-values_history-layout" [class.mission-values_history-layout-rtl]="i18nService.getCurrentLanguage() === 'ar'">
+          <!-- Content Section -->
+          <div class="mission-values_history-content">
+            <div class="mission-values_history-content-wrapper">
+              <div class="mission-values_history-label">
+                <span class="mission-values_history-label-text">{{ 'home.missionValues.badge' | translate }}</span>
+              </div>
+              <h3 class="mission-values_history-title">
+                {{ 'about.history.title' | translate }}
+              </h3>
+              <p class="mission-values_history-description">
+                {{ 'about.history.description' | translate }}
+              </p>
+            </div>
           </div>
-          <div class="mission-values_history-text">
-            <h3 class="mission-values_history-title">
-              {{ 'about.history.title' | translate }}
-            </h3>
-            <p class="mission-values_history-description">
-              {{ 'about.history.description' | translate }}
-            </p>
+          
+          <!-- Images Gallery -->
+          <div class="mission-values_history-gallery">
+            <div class="mission-values_history-gallery-grid">
+              <div 
+                *ngFor="let image of historyImages; let i = index" 
+                class="mission-values_history-gallery-item"
+                [style.animation-delay]="(i * 0.1) + 's'"
+              >
+                <div class="mission-values_history-gallery-image-wrapper">
+                  <img 
+                    [src]="image" 
+                    [alt]="'about.history.image' + (i + 1) | translate"
+                    class="mission-values_history-gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="mission-values_history-gallery-overlay">
+                    <div class="mission-values_history-gallery-icon">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Values Grid -->
-    <div class="mission-values_values-section">
-      <div class="mission-values_values-header">
-        <h3 class="mission-values_values-title">
-          {{ 'about.values.title' | translate }}
-        </h3>
-        <p class="mission-values_values-subtitle">
-          {{ 'about.values.subtitle' | translate }}
-        </p>
-      </div>
-      <div class="mission-values_values-grid">
-        <div *ngFor="let value of valuesList; let i = index" class="mission-values_value-card">
-          <div class="mission-values_value-number">{{ '0' + (i + 1) }}</div>
-          <div class="mission-values_value-content">
-            <h4 class="mission-values_value-title">
-              {{ ('about.values.' + value + '.title') | translate }}
-            </h4>
-            <p class="mission-values_value-description">
-              {{ ('about.values.' + value + '.description') | translate }}
-            </p>
-          </div>
-          <div class="mission-values_value-line"></div>
         </div>
       </div>
     </div>
